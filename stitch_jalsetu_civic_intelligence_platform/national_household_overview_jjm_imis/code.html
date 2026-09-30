@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-container":"#002147","on-error-container":"#93000a","tier-6-saturated":"#08306B","secondary-container":"#70aafe","on-primary-fixed-variant":"#2d476f","error":"#ba1a1a","tier-3-moderate":"#BCD9EA","surface-dim":"#cddbee","tertiary-fixed-dim":"#adc6ff","card-village":"#E8F8F0","on-primary-fixed":"#001b3d","background":"#f7f9ff","tier-4-progress":"#6BAED6","secondary":"#115eae","card-district":"#E8EEFA","surface-tint":"#465f88","surface-variant":"#d5e4f7","on-secondary":"#ffffff","secondary-fixed-dim":"#a7c8ff","ashoka-gold":"#B3802A","surface-container-highest":"#d5e4f7","on-tertiary-fixed-variant":"#004493","on-secondary-fixed-variant":"#004788","tertiary-fixed":"#d8e2ff","inverse-surface":"#243240","water-safe":"#1A7F48","surface":"#f7f9ff","inverse-on-surface":"#e8f1ff","surface-white":"#FFFFFF","inverse-primary":"#aec7f6","surface-container":"#e3efff","surface-container-lowest":"#ffffff","outline-variant":"#c4c6cf","on-surface":"#0e1d2a","on-secondary-container":"#003d77","tier-2-low":"#F3B39E","primary-fixed-dim":"#aec7f6","border-grid":"#DCE3EC","card-block":"#FDEAEB","surface-container-high":"#dbeafd","on-primary":"#ffffff","surface-container-low":"#edf4ff","on-surface-variant":"#44474e","on-secondary-fixed":"#001c3b","on-primary-container":"#708ab5","card-panchayat":"#EBF3FC","outline":"#74777f","secondary-fixed":"#d5e3ff","water-alert":"#C82333","tier-5-high":"#2171B5","tier-1-critical":"#F7D9CE","on-background":"#0e1d2a","on-tertiary":"#ffffff","on-tertiary-container":"#3f86f8","on-error":"#ffffff","primary-fixed":"#d6e3ff","error-container":"#ffdad6","primary":"#000a1e","surface-bright":"#f7f9ff","tertiary-container":"#00204c","on-tertiary-fixed":"#001a41","tertiary":"#000a21","border-strong":"#B0C0D4","portal-bg":"#F4F6F9"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"2rem","margin-mobile":"1rem","space-sm":"0.5rem","gutter-mobile":"0.75rem",margin:"2rem","space-lg":"1.25rem",gutter:"1rem","space-xs":"0.25rem","space-md":"0.75rem"},fontFamily:{"label-numeric-md":["JetBrains Mono"],"headline-lg":["Public Sans"],"headline-xl-mobile":["Public Sans"],"label-numeric-lg":["JetBrains Mono"],"headline-md":["Public Sans"],"body-sm":["Public Sans"],"body-md":["Public Sans"],"headline-xl":["Public Sans"],"headline-sm":["Public Sans"],"body-lg":["Public Sans"],"headline-lg-mobile":["Public Sans"],"label-numeric-sm":["JetBrains Mono"],"label-ui":["Public Sans"]},fontSize:{"label-numeric-md":["14px",{lineHeight:"18px",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-xl-mobile":["26px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-numeric-lg":["24px",{lineHeight:"28px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["20px",{lineHeight:"26px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"22px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg-mobile":["22px",{lineHeight:"28px",fontWeight:"600"}],"label-numeric-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-ui":["11px",{lineHeight:"14px",letterSpacing:"0.05em",fontWeight:"700"}]}}}};</script></head><body class="bg-portal-bg text-on-surface font-body-md"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-white border-b border-border-grid"><div class="h-[84px] w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex flex-col items-center justify-center text-ashoka-gold px-space-xs"><span class="material-symbols-outlined text-[32px] leading-none">account_balance</span><span class="font-label-ui text-[9px] uppercase tracking-wider text-ashoka-gold mt-0.5">सत्यमेव जयते</span></div><div class="h-11 w-px bg-border-grid"></div><div class="flex flex-col justify-center"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Jal Jeevan Mission - Har Ghar Jal</span><span class="font-body-sm text-body-sm text-on-surface-variant">(जल जीवन मिशन)</span></div><span class="font-body-sm text-[12px] leading-[15px] font-semibold text-secondary">Functional Household Tap Connection (FHTC) in every rural home</span><span class="font-label-ui text-[10px] text-on-surface-variant uppercase tracking-wider">Department of Drinking Water and Sanitation, Ministry of Jal Shakti</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low border border-border-grid px-space-sm py-1 rounded"><span class="w-2 h-2 rounded-full bg-water-safe animate-pulse"></span><span class="font-label-numeric-sm text-label-numeric-sm text-on-surface">SCADA CORE: 127.0.0.1:8000 | ONLINE</span></div><div class="flex items-center border border-border-grid rounded px-space-xs bg-surface-white h-9"><span class="material-symbols-outlined text-secondary text-[18px] mr-1">translate</span><select class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none cursor-pointer pr-1"><option>English</option><option>हिन्दी</option><option>मराठी</option><option>தமிழ்</option><option>తెలుగు</option><option>മലയാളം</option><option>বাংলা</option><option>ગુજરાતી</option></select></div><button class="flex items-center gap-1 border border-secondary text-secondary hover:bg-card-panchayat px-space-sm h-9 rounded font-headline-sm text-[12px] uppercase tracking-wider transition-colors"><span class="material-symbols-outlined text-[16px]">verified</span>Proof-of-Flow</button><button class="flex items-center gap-1 bg-water-alert hover:opacity-90 text-on-error px-space-sm h-9 rounded font-headline-sm text-[12px] uppercase tracking-wider transition-opacity"><span class="material-symbols-outlined text-[16px]">warning</span>Simulate Rupture</button><div class="flex items-center justify-center w-10 h-10 rounded-full border border-border-grid bg-card-panchayat text-secondary"><span class="material-symbols-outlined text-[24px]">water_drop</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-8 w-full bg-primary-container px-space-lg flex items-center justify-between text-card-panchayat font-label-numeric-sm text-label-numeric-sm border-t border-border-strong/20"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1 font-label-ui text-[10px] text-ashoka-gold uppercase tracking-wider bg-tertiary-container px-1.5 py-0.5 rounded"><span class="material-symbols-outlined text-[13px]">campaign</span>Bhashini Live</span><span class="text-card-panchayat truncate max-w-xl">Real-time Jal Jeevan Mission national telemetry ingest pipeline synchronized across 785 districts.</span></div><div class="flex items-center gap-space-lg text-surface-container-high"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">thermostat</span>Ambient: 28.4°C</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-water-safe">check_circle</span>Turbidity: 0.82 NTU (Safe)</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">sync</span>Last Sync: 10:42:15 IST</span></div></div></header><aside class="fixed left-0 top-[116px] bottom-0 w-20 bg-surface-white border-r border-border-grid z-40 flex flex-col items-center py-space-sm"><nav class="w-full flex flex-col gap-1" data-active-classes="bg-card-panchayat text-secondary border-l-4 border-secondary font-bold"><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="citizen-corner" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">groups</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Citizen Corner</span></a><a aria-current="page" class="flex flex-col items-center justify-center py-2 px-1 transition-colors bg-card-panchayat text-secondary border-l-4 border-secondary font-bold" data-path="fhtc-household-status" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">home_pin</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">FHTC Status</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="water-quality-monitoring" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">science</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Water Quality</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="survekshan" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">assessment</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Survekshan</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="schools-and-awcs" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">school</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Schools &amp; AWCs</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="scada-digital-twin" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">schema</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">SCADA Twin</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="cag-audit" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">policy</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">CAG Audit</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="contractor-sla-escrow" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">payments</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Contractor SLA</span></a></nav></aside><div class="pl-20"><main class="relative pt-[116px] w-full min-h-screen bg-portal-bg"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-[1440px] mx-auto w-full flex flex-col gap-space-lg">
+<!-- Citizen Village Search Header Bar -->
+<div class="bg-surface-white rounded-xl shadow-md p-space-md flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-card-panchayat flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">location_searching</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">Know Status of JJM Implementation in Your Village</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Track administrative milestones, tap pressure, and functional certifications</span>
+</div>
+</div>
+<!-- Cascading Filter Engine -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-space-xs">
+<div class="bg-surface-container-low px-space-xs py-1 rounded flex items-center">
+<label class="font-label-ui text-[10px] text-on-surface-variant mr-1">STATE</label>
+<select class="bg-transparent font-body-sm text-body-sm text-on-surface font-medium outline-none cursor-pointer" id="state-select">
+<option value="all">Select State</option>
+<option value="goa">Goa</option>
+<option selected="" value="haryana">Haryana</option>
+<option value="gujarat">Gujarat</option>
+<option value="punjab">Punjab</option>
+<option value="telangana">Telangana</option>
+<option value="maharashtra">Maharashtra</option>
+<option value="up">Uttar Pradesh</option>
+<option value="bihar">Bihar</option>
+</select>
+</div>
+<div class="bg-surface-container-low px-space-xs py-1 rounded flex items-center">
+<label class="font-label-ui text-[10px] text-on-surface-variant mr-1">DIST</label>
+<select class="bg-transparent font-body-sm text-body-sm text-on-surface font-medium outline-none cursor-pointer" id="district-select">
+<option value="all">Ambala</option>
+<option value="karnal">Karnal</option>
+<option value="rohtak">Rohtak</option>
+<option value="hisar">Hisar</option>
+</select>
+</div>
+<div class="bg-surface-container-low px-space-xs py-1 rounded flex items-center">
+<label class="font-label-ui text-[10px] text-on-surface-variant mr-1">VILL</label>
+<select class="bg-transparent font-body-sm text-body-sm text-on-surface font-medium outline-none cursor-pointer" id="village-select">
+<option value="all">Saha (Certified)</option>
+<option value="barara">Barara</option>
+<option value="mullana">Mullana</option>
+</select>
+</div>
+<button class="bg-primary hover:bg-secondary text-on-primary px-space-md py-2 rounded font-headline-sm text-[12px] uppercase tracking-wider flex items-center gap-1 transition-colors whitespace-nowrap shadow-sm" onclick="document.getElementById('village-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[16px]">water_ec</span>
+<span>Know Water Quality</span>
+</button>
+</div>
+</div>
+<!-- National Grid Top Stat Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- 1. Total Rural HHs -->
+<div class="bg-surface-white rounded-xl shadow-sm p-space-md flex items-center justify-between relative overflow-hidden">
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui text-on-surface-variant uppercase tracking-wider">Total Rural Households</span>
+<span class="font-label-numeric-lg text-label-numeric-lg text-[#3B2314] mt-1">19,35,45,173</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Census 2011 normalized baseline</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-card-district flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">cottage</span>
+</div>
+<div class="absolute -right-3 -bottom-3 w-16 h-16 rounded-full bg-card-district/40 pointer-events-none"></div>
+</div>
+<!-- 2. Baseline Status at Launch -->
+<div class="bg-surface-white rounded-xl shadow-sm p-space-md flex items-center justify-between relative overflow-hidden">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-ui text-label-ui text-on-surface-variant uppercase tracking-wider">FHTC as on 15 Aug 2019</span>
+<span class="bg-card-village text-water-safe font-label-numeric-sm text-[11px] px-1.5 py-0.2 rounded font-bold">16.72%</span>
+</div>
+<span class="font-label-numeric-lg text-label-numeric-lg text-water-safe mt-1">3,23,62,838</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Pre-Mission functional coverage</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-card-village flex items-center justify-center text-water-safe">
+<span class="material-symbols-outlined text-[28px]">flag</span>
+</div>
+<div class="absolute -right-3 -bottom-3 w-16 h-16 rounded-full bg-card-village/40 pointer-events-none"></div>
+</div>
+<!-- 3. Current Live Coverage -->
+<div class="bg-surface-white rounded-xl shadow-sm p-space-md flex items-center justify-between relative overflow-hidden">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-ui text-label-ui text-on-surface-variant uppercase tracking-wider">Current Saturation (FHTC)</span>
+<span class="bg-card-panchayat text-secondary font-label-numeric-sm text-[11px] px-1.5 py-0.2 rounded font-bold">+10,331 Today</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-label-numeric-lg text-label-numeric-lg text-secondary">15,95,46,438</span>
+<span class="font-headline-sm text-headline-sm text-tier-6-saturated font-bold">(82.43%)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">12,71,83,600 provided post-launch</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-card-panchayat flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">water_full</span>
+</div>
+<div class="absolute -right-3 -bottom-3 w-16 h-16 rounded-full bg-card-panchayat/50 pointer-events-none"></div>
+</div>
+</div>
+<!-- Main Split Hero Grid: GIS Map (5 Cols) vs National Telemetry (7 Cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: Vector GIS Choropleth & Administrative Drill-down -->
+<div class="lg:col-span-5 bg-surface-white rounded-xl shadow-sm p-space-md flex flex-col justify-between">
+<div>
+<!-- Header and Filter Pills -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-sm border-b border-border-grid">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">public</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary">National GIS Choropleth</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Real-time state saturation status</p>
+</div>
+</div>
+<!-- Segmented Control -->
+<div class="flex items-center bg-surface-container-low p-0.5 rounded text-[11px] font-medium">
+<button class="px-2 py-0.5 bg-surface-white rounded shadow-sm text-secondary font-semibold">All (785)</button>
+<button class="px-2 py-0.5 text-on-surface-variant hover:text-on-surface">Aspirational</button>
+<button class="px-2 py-0.5 text-on-surface-variant hover:text-on-surface">QA Habit</button>
+</div>
+</div>
+<!-- Interactive GIS India SVG Vector Representation -->
+<div class="relative w-full h-[360px] my-space-sm flex items-center justify-center bg-surface-container-low rounded-lg p-2 overflow-hidden">
+<svg class="w-full h-full max-h-[350px] drop-shadow-sm select-none" viewbox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+<!-- Decorative Geo Coordinates Grid Lines -->
+<path d="M20 100 H380 M20 200 H380 M20 300 H380 M100 20 V420 M200 20 V420 M300 20 V420" fill="none" stroke="#E3EFFC" stroke-dasharray="3,3" stroke-width="1"></path>
+<!-- India Outline Sub-regions & States for Interactive Saturation representation -->
+<g class="cursor-pointer" id="states-layer">
+<!-- J&K, Ladakh (Tier 5: 76-100%) -->
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M120,30 L155,20 L190,45 L170,75 L135,70 Z" data-hh="18.3 Lakh" data-pct="84.2%" data-state="Jammu &amp; Kashmir" data-trust="98.2" id="state-jk"></path>
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M155,20 L210,35 L225,65 L170,75 Z" data-hh="0.4 Lakh" data-pct="92.1%" data-state="Ladakh" data-trust="99.4" id="state-ladakh"></path>
+<!-- Himachal Pradesh (Tier 6: 100%) -->
+<path class="fill-tier-6-saturated hover:opacity-80 transition-opacity" d="M140,75 L175,75 L165,100 L130,95 Z" data-hh="17.0 Lakh" data-pct="100.0%" data-state="Himachal Pradesh" data-trust="99.8" id="state-hp"></path>
+<!-- Punjab (Tier 6: 100%) -->
+<path class="fill-tier-6-saturated hover:opacity-80 transition-opacity" d="M110,85 L135,80 L130,115 L105,110 Z" data-hh="34.2 Lakh" data-pct="100.0%" data-state="Punjab" data-trust="99.6" id="state-pb"></path>
+<!-- Haryana (Tier 6: 100%) -->
+<path class="fill-tier-6-saturated hover:opacity-80 transition-opacity" d="M130,95 L155,95 L145,130 L125,120 Z" data-hh="30.4 Lakh" data-pct="100.0%" data-state="Haryana" data-trust="99.9" id="state-hr"></path>
+<!-- Uttarakhand (Tier 5: 76-100%) -->
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M165,90 L195,100 L180,125 L155,110 Z" data-hh="14.8 Lakh" data-pct="91.4%" data-state="Uttarakhand" data-trust="97.5" id="state-uk"></path>
+<!-- Rajasthan (Tier 3: 26-50%) -->
+<path class="fill-tier-3-moderate hover:opacity-80 transition-opacity" d="M70,120 L125,120 L135,175 L80,195 L65,150 Z" data-hh="107.1 Lakh" data-pct="49.8%" data-state="Rajasthan" data-trust="92.1" id="state-rj"></path>
+<!-- Uttar Pradesh (Tier 4: 51-75%) -->
+<path class="fill-tier-4-progress hover:opacity-80 transition-opacity" d="M145,125 L215,135 L225,180 L160,175 L140,140 Z" data-hh="265.4 Lakh" data-pct="74.2%" data-state="Uttar Pradesh" data-trust="94.3" id="state-up"></path>
+<!-- Gujarat (Tier 6: 100%) -->
+<path class="fill-tier-6-saturated hover:opacity-80 transition-opacity" d="M45,190 L90,185 L95,230 L55,245 L35,215 Z" data-hh="91.2 Lakh" data-pct="100.0%" data-state="Gujarat" data-trust="99.7" id="state-gj"></path>
+<!-- Madhya Pradesh (Tier 4: 51-75%) -->
+<path class="fill-tier-4-progress hover:opacity-80 transition-opacity" d="M100,185 L180,180 L185,235 L120,240 L95,215 Z" data-hh="112.5 Lakh" data-pct="64.8%" data-state="Madhya Pradesh" data-trust="93.6" id="state-mp"></path>
+<!-- Bihar (Tier 5: 76-100%) -->
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M220,150 L270,155 L260,190 L215,185 Z" data-hh="160.2 Lakh" data-pct="96.4%" data-state="Bihar" data-trust="98.1" id="state-br"></path>
+<!-- West Bengal (Tier 3: 26-50%) -->
+<path class="fill-tier-3-moderate hover:opacity-80 transition-opacity" d="M255,190 L285,185 L275,245 L250,230 Z" data-hh="141.2 Lakh" data-pct="48.5%" data-state="West Bengal" data-trust="89.4" id="state-wb"></path>
+<!-- Northeast States (Assam Tier 5, Arunachal Tier 6) -->
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M290,140 L345,130 L360,165 L320,195 L290,170 Z" data-hh="67.5 Lakh" data-pct="88.7%" data-state="Assam &amp; North East" data-trust="96.2" id="state-ne"></path>
+<!-- Maharashtra (Tier 5: 76-100%) -->
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M85,240 L160,240 L155,295 L105,290 L80,260 Z" data-hh="146.5 Lakh" data-pct="90.6%" data-state="Maharashtra" data-trust="97.8" id="state-mh"></path>
+<!-- Odisha (Tier 4: 51-75%) -->
+<path class="fill-tier-4-progress hover:opacity-80 transition-opacity" d="M190,230 L245,230 L235,275 L180,265 Z" data-hh="88.3 Lakh" data-pct="68.2%" data-state="Odisha" data-trust="93.4" id="state-or"></path>
+<!-- Telangana (Tier 6: 100%) -->
+<path class="fill-tier-6-saturated hover:opacity-80 transition-opacity" d="M135,270 L175,265 L170,305 L130,305 Z" data-hh="53.9 Lakh" data-pct="100.0%" data-state="Telangana" data-trust="99.9" id="state-tg"></path>
+<!-- Andhra Pradesh (Tier 4: 51-75%) -->
+<path class="fill-tier-4-progress hover:opacity-80 transition-opacity" d="M145,305 L185,295 L175,360 L140,345 Z" data-hh="95.4 Lakh" data-pct="72.1%" data-state="Andhra Pradesh" data-trust="94.8" id="state-ap"></path>
+<!-- Karnataka (Tier 5: 76-100%) -->
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M105,295 L145,305 L135,365 L100,340 Z" data-hh="91.1 Lakh" data-pct="86.9%" data-state="Karnataka" data-trust="97.1" id="state-ka"></path>
+<!-- Goa (Tier 6: 100%) -->
+<circle class="fill-tier-6-saturated stroke-surface-white stroke-1 hover:r-6 transition-all" cx="98" cy="305" data-hh="2.3 Lakh" data-pct="100.0%" data-state="Goa" data-trust="100.0" id="state-ga" r="4.5"></circle>
+<!-- Kerala (Tier 4: 51-75%) -->
+<path class="fill-tier-4-progress hover:opacity-80 transition-opacity" d="M110,365 L125,365 L120,410 L105,400 Z" data-hh="67.1 Lakh" data-pct="54.3%" data-state="Kerala" data-trust="96.5" id="state-kl"></path>
+<!-- Tamil Nadu (Tier 5: 76-100%) -->
+<path class="fill-tier-5-high hover:opacity-80 transition-opacity" d="M125,360 L155,360 L145,415 L120,410 Z" data-hh="125.8 Lakh" data-pct="84.7%" data-state="Tamil Nadu" data-trust="98.0" id="state-tn"></path>
+</g>
+<!-- Island Territories Indicators -->
+<g class="cursor-pointer" id="island-andaman">
+<circle class="fill-tier-6-saturated hover:r-5 transition-all" cx="340" cy="350" data-hh="0.62 Lakh" data-pct="100.0%" data-state="A&amp;N Islands" data-trust="100.0" r="3.5"></circle>
+<circle class="fill-tier-6-saturated hover:r-5 transition-all" cx="342" cy="365" data-hh="0.62 Lakh" data-pct="100.0%" data-state="A&amp;N Islands" data-trust="100.0" r="3.5"></circle>
+<text class="fill-secondary font-label-ui text-[8px] font-bold" x="315" y="340">A&amp;N UT (100%)</text>
+</g>
+</svg>
+<!-- Floating State Interactive Tooltip Card -->
+<div class="absolute bottom-3 left-3 bg-surface-white/95 backdrop-blur-sm p-space-xs rounded shadow-md border border-border-grid pointer-events-none transition-all duration-150 flex flex-col gap-0.5 min-w-[170px]" id="gis-state-tooltip">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[13px] text-primary" id="tooltip-state">Haryana</span>
+<span class="font-label-numeric-sm text-[11px] font-bold text-tier-6-saturated bg-card-panchayat px-1 rounded" id="tooltip-pct">100.0%</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-[11px] text-on-surface-variant">
+<span>Rural HHs:</span>
+<span class="font-label-numeric-sm font-semibold text-on-surface" id="tooltip-hh">30.4 Lakh</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-[11px] text-water-safe">
+<span>JalSetu Trust Score:</span>
+<span class="font-label-numeric-sm font-bold" id="tooltip-trust">99.9/100</span>
+</div>
+</div>
+</div>
+<!-- Official 6-Tier Choropleth Legend -->
+<div class="flex flex-col gap-1.5 pt-space-xs border-t border-border-grid">
+<span class="font-label-ui text-[10px] text-on-surface-variant uppercase tracking-wider">Saturation Tiers (% of Rural Households with Tap Connection)</span>
+<div class="grid grid-cols-6 gap-1">
+<div class="flex flex-col items-center">
+<div class="h-2 w-full bg-tier-1-critical rounded-sm"></div>
+<span class="font-label-numeric-sm text-[9px] text-on-surface-variant mt-0.5">0-10%</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="h-2 w-full bg-tier-2-low rounded-sm"></div>
+<span class="font-label-numeric-sm text-[9px] text-on-surface-variant mt-0.5">11-25%</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="h-2 w-full bg-tier-3-moderate rounded-sm"></div>
+<span class="font-label-numeric-sm text-[9px] text-on-surface-variant mt-0.5">26-50%</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="h-2 w-full bg-tier-4-progress rounded-sm"></div>
+<span class="font-label-numeric-sm text-[9px] text-on-surface-variant mt-0.5">51-75%</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="h-2 w-full bg-tier-5-high rounded-sm"></div>
+<span class="font-label-numeric-sm text-[9px] text-on-surface-variant mt-0.5">76-99%</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="h-2 w-full bg-tier-6-saturated rounded-sm"></div>
+<span class="font-label-numeric-sm text-[9px] font-bold text-secondary mt-0.5">100%</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-on-surface-variant pt-1">
+<span class="flex items-center gap-1">☆ Reported: 100% Panchayati Declaration</span>
+<span class="flex items-center gap-1 text-water-safe font-semibold">★ Certified: Gram Sabha Video Verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: National JJM Telemetry & Har Ghar Jal Stack -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Warm Cream Har Ghar Jal Certified States Ribbon -->
+<div class="bg-[#FEF9C3] rounded-xl p-space-md border border-[#FDE047] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-ashoka-gold/20 flex items-center justify-center text-ashoka-gold shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary">100% Certified Har Ghar Jal States/UTs</span>
+<span class="bg-ashoka-gold text-surface-white font-label-ui text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">Constitutional Milestone</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5 font-medium">
+                Goa, A&amp;N Islands, Puducherry, D&amp;NH and D&amp;D, Arunachal Pradesh, Haryana, Punjab, Gujarat, Telangana
+              </p>
+</div>
+</div>
+<button class="bg-primary-container hover:bg-secondary text-surface-white font-headline-sm text-[12px] uppercase px-space-md py-2 rounded shrink-0 transition-colors flex items-center gap-1 shadow-sm" onclick="document.getElementById('proof-flow-dialog').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span>Proof-of-Flow</span>
+</button>
+</div>
+<!-- 4 Pastel Administrative Tier Har Ghar Jal Badges (2x2 Grid) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- 1. Districts (Lavender #E8EEFA) -->
+<div class="bg-card-district rounded-xl p-space-md flex flex-col justify-between border-t-4 border-secondary shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-[#1E3A8A]">Districts Saturated</span>
+<span class="w-8 h-8 rounded-full bg-surface-white/80 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+</span>
+</div>
+<div class="my-space-xs flex items-baseline gap-2">
+<span class="font-label-numeric-lg text-[30px] font-bold text-[#1E3A8A]">196</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">/ 785 Districts</span>
+</div>
+<div class="flex items-center justify-between text-body-sm border-t border-border-strong/30 pt-space-xs">
+<span class="text-on-surface-variant">Reported: <strong class="text-[#1E3A8A]">196</strong></span>
+<span class="text-water-safe font-semibold">Certified: <strong>122</strong></span>
+</div>
+</div>
+<!-- 2. Blocks (Pale Peach #FDEAEB) -->
+<div class="bg-card-block rounded-xl p-space-md flex flex-col justify-between border-t-4 border-water-alert shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-[#991B1B]">Blocks Saturated</span>
+<span class="w-8 h-8 rounded-full bg-surface-white/80 flex items-center justify-center text-[#991B1B]">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</span>
+</div>
+<div class="my-space-xs flex items-baseline gap-2">
+<span class="font-label-numeric-lg text-[30px] font-bold text-[#991B1B]">1,965</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">/ 7,180 Blocks</span>
+</div>
+<div class="flex items-center justify-between text-body-sm border-t border-border-strong/30 pt-space-xs">
+<span class="text-on-surface-variant">Reported: <strong class="text-[#991B1B]">1,965</strong></span>
+<span class="text-water-safe font-semibold">Certified: <strong>1,123</strong></span>
+</div>
+</div>
+<!-- 3. Panchayats (Light Periwinkle #EBF3FC) -->
+<div class="bg-card-panchayat rounded-xl p-space-md flex flex-col justify-between border-t-4 border-tier-5-high shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-[#1D4ED8]">Gram Panchayats</span>
+<span class="w-8 h-8 rounded-full bg-surface-white/80 flex items-center justify-center text-tier-5-high">
+<span class="material-symbols-outlined text-[18px]">diversity_3</span>
+</span>
+</div>
+<div class="my-space-xs flex items-baseline gap-2">
+<span class="font-label-numeric-lg text-[30px] font-bold text-[#1D4ED8]">1,34,928</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">/ 2,69,450 GPs</span>
+</div>
+<div class="flex items-center justify-between text-body-sm border-t border-border-strong/30 pt-space-xs">
+<span class="text-on-surface-variant">Reported: <strong class="text-[#1D4ED8]">1,34,928</strong></span>
+<span class="text-water-safe font-semibold">Certified: <strong>1,03,348</strong></span>
+</div>
+</div>
+<!-- 4. Villages (Pale Mint #E8F8F0) -->
+<div class="bg-card-village rounded-xl p-space-md flex flex-col justify-between border-t-4 border-water-safe shadow-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-[#065F46]">Villages Saturated</span>
+<span class="w-8 h-8 rounded-full bg-surface-white/80 flex items-center justify-center text-water-safe">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</span>
+</div>
+<div class="my-space-xs flex items-baseline gap-2">
+<span class="font-label-numeric-lg text-[30px] font-bold text-[#065F46]">2,93,055</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">/ 6,01,480 Villages</span>
+</div>
+<div class="flex items-center justify-between text-body-sm border-t border-border-strong/30 pt-space-xs">
+<span class="text-on-surface-variant">Reported: <strong class="text-[#065F46]">2,93,055</strong></span>
+<span class="text-water-safe font-semibold">Certified: <strong>2,11,800</strong></span>
+</div>
+</div>
+</div>
+<!-- Telemetry Sync Metadata Strip -->
+<div class="bg-surface-white rounded-xl shadow-sm p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm border-l-4 border-ashoka-gold">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-ashoka-gold text-[24px]">sensors</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[13px] text-primary">SCADA Automated Flow Meter Integration</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Sensor data ingested from 18,410 Water Supply Schemes with Edge validation</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="bg-card-panchayat text-secondary px-2 py-1 rounded font-label-numeric-sm text-[11px]">55 LPCD Compliance: 94.2%</span>
+<span class="bg-card-village text-water-safe px-2 py-1 rounded font-label-numeric-sm text-[11px]">Residual Cl₂: Safe</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cumulative Mission Growth Spline Chart Section -->
+<div class="bg-surface-white rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-border-grid">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">ssid_chart</span>
+<span class="font-headline-md text-headline-md text-primary">Cumulative FHTC Acceleration Trajectory (2019 - 2026)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Progress tracking rural tap connections from 3.23 Crore (16.7%) to 15.95 Crore (82.4%)
+          </span>
+</div>
+<!-- Interactive Chart Mode Segmented Control -->
+<div class="flex items-center bg-surface-container-low p-1 rounded">
+<button class="px-space-sm py-1 bg-surface-white rounded text-secondary font-headline-sm text-[12px] uppercase shadow-sm" id="btn-cumulative">Cumulative</button>
+<button class="px-space-sm py-1 text-on-surface-variant hover:text-on-surface font-headline-sm text-[12px] uppercase" id="btn-yearly">Yearly Addition</button>
+</div>
+</div>
+<!-- High-res Vector Spline Area Chart with Official Milestone Markers -->
+<div class="relative w-full h-[240px] pt-4 overflow-hidden">
+<svg class="w-full h-full overflow-visible select-none" preserveaspectratio="none" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="jjmSplineGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#115eae" stop-opacity="0.35"></stop>
+<stop offset="80%" stop-color="#115eae" stop-opacity="0.03"></stop>
+<stop offset="100%" stop-color="#115eae" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="targetGradient" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#BCD9EA"></stop>
+<stop offset="100%" stop-color="#08306B"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Reference Grid Lines with Indian Comma Metrics -->
+<g class="text-outline-variant stroke-border-grid stroke-1">
+<line stroke-dasharray="2,2" x1="50" x2="980" y1="20" y2="20"></line>
+<line stroke-dasharray="2,2" x1="50" x2="980" y1="65" y2="65"></line>
+<line stroke-dasharray="2,2" x1="50" x2="980" y1="110" y2="110"></line>
+<line stroke-dasharray="2,2" x1="50" x2="980" y1="155" y2="155"></line>
+<line x1="50" x2="980" y1="200" y2="200"></line>
+</g>
+<!-- Y Axis Labels -->
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="end" x="40" y="24">19.3 Cr (100%)</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="end" x="40" y="69">15.0 Cr (77.5%)</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="end" x="40" y="114">10.0 Cr (51.6%)</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="end" x="40" y="159">5.0 Cr (25.8%)</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="end" x="40" y="204">0.0</text>
+<!-- Spline Fill Area -->
+<path d="M 70,172 C 180,165 280,140 400,105 C 550,75 720,48 880,38 L 880,200 L 70,200 Z" fill="url(#jjmSplineGradient)"></path>
+<!-- Spline Line -->
+<path d="M 70,172 C 180,165 280,140 400,105 C 550,75 720,48 880,38" fill="none" id="trajectory-line" stroke="#115eae" stroke-linecap="round" stroke-width="3"></path>
+<!-- Target Projection Dotted Line to 100% (19.35 Cr) -->
+<path d="M 880,38 C 920,32 950,25 980,20" fill="none" stroke="#B3802A" stroke-dasharray="4,4" stroke-width="2"></path>
+<!-- Milestone Point 1: Launch 15 Aug 2019 -->
+<circle class="fill-surface-white stroke-secondary stroke-2" cx="70" cy="172" r="5"></circle>
+<g transform="translate(70, 145)">
+<rect fill="#002147" height="18" rx="3" width="70" x="-35" y="-14"></rect>
+<text class="fill-surface-white font-label-numeric-sm text-[9px] font-bold" text-anchor="middle" x="0" y="-2">Launch: 3.23 Cr</text>
+</g>
+<!-- Milestone Point 2: 50% Milestone (Mid 2022) -->
+<circle class="fill-surface-white stroke-secondary stroke-2" cx="400" cy="105" r="5"></circle>
+<g transform="translate(400, 80)">
+<rect fill="#115eae" height="18" rx="3" width="70" x="-35" y="-14"></rect>
+<text class="fill-surface-white font-label-numeric-sm text-[9px] font-bold" text-anchor="middle" x="0" y="-2">50% Milestone</text>
+</g>
+<!-- Milestone Point 3: 10 Cr Milestone (2023) -->
+<circle class="fill-surface-white stroke-secondary stroke-2" cx="620" cy="62" r="5"></circle>
+<g transform="translate(620, 42)">
+<rect fill="#115eae" height="18" rx="3" width="70" x="-35" y="-14"></rect>
+<text class="fill-surface-white font-label-numeric-sm text-[9px] font-bold" text-anchor="middle" x="0" y="-2">10 Cr Taps</text>
+</g>
+<!-- Milestone Point 4: Live 15.95 Cr (Today) -->
+<circle class="fill-water-safe stroke-surface-white stroke-2 animate-ping" cx="880" cy="38" r="6"></circle>
+<circle class="fill-water-safe stroke-surface-white stroke-2" cx="880" cy="38" r="5"></circle>
+<g transform="translate(880, 18)">
+<rect fill="#1A7F48" height="20" rx="3" width="84" x="-42" y="-15"></rect>
+<text class="fill-surface-white font-label-numeric-sm text-[10px] font-bold" text-anchor="middle" x="0" y="-1">15.95 Cr (82.4%)</text>
+</g>
+<!-- Target End Label -->
+<text class="fill-ashoka-gold font-label-ui text-[9px] font-bold" text-anchor="end" x="980" y="14">TARGET 100%</text>
+<!-- X Axis Markers -->
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="middle" x="70" y="215">Aug 2019</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="middle" x="240" y="215">2020-21</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="middle" x="400" y="215">2021-22</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="middle" x="620" y="215">2022-23</text>
+<text class="fill-on-surface-variant font-label-numeric-sm text-[10px]" text-anchor="middle" x="750" y="215">2023-24</text>
+<text class="fill-secondary font-label-numeric-sm text-[10px] font-bold" text-anchor="middle" x="880" y="215">Live 2025-26</text>
+</svg>
+</div>
+<!-- Chart Sub-summary Footnote -->
+<div class="flex flex-wrap items-center justify-between text-body-sm text-on-surface-variant bg-surface-container-low p-space-xs rounded">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-secondary"></span>Actual Tap Installations verified by Third Party Inspection Agencies (TPIA)</span>
+<span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-ashoka-gold"></span>Projected run-rate to complete residual 3.39 Crore households</span>
+</div>
+<span class="font-label-numeric-sm text-[11px] font-semibold text-secondary">CAG Compliance: Verified In-situ</span>
+</div>
+</div>
+<!-- 100% Saturation League Table -->
+<div class="bg-surface-white rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- High Contrast Royal Blue Table Header Bar -->
+<div class="bg-[#0052CC] p-space-md text-surface-white flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[24px]">military_tech</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-surface-white">100% Saturation League &amp; High Performing States</span>
+<p class="font-body-sm text-[11px] text-surface-container-low">Official rankings as per certified Gram Sabha verification protocols</p>
+</div>
+</div>
+<!-- Controls: Quick Search + CSV Export -->
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-2 text-[16px] text-on-surface-variant">search</span>
+<input class="bg-surface-white text-on-surface font-body-sm text-[12px] pl-7 pr-space-xs py-1.5 rounded outline-none w-44 md:w-56" id="state-search-input" placeholder="Search State or UT..." type="text"/>
+</div>
+<button class="bg-surface-white text-[#0052CC] hover:bg-card-panchayat px-space-sm py-1.5 rounded font-headline-sm text-[12px] uppercase tracking-wider flex items-center gap-1 transition-colors" id="export-csv-btn">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>CSV Export</span>
+</button>
+</div>
+</div>
+<!-- Dense Tabular View -->
+<div class="w-full overflow-x-auto">
+<table class="w-full border-collapse text-left" id="saturation-table">
+<thead>
+<tr class="bg-primary-container text-surface-white font-label-ui text-[11px] uppercase tracking-wider">
+<th class="py-2.5 px-space-sm text-left">State / UT</th>
+<th class="py-2.5 px-space-sm text-right">Total Rural HHs</th>
+<th class="py-2.5 px-space-sm text-right">FHTC Provided</th>
+<th class="py-2.5 px-space-sm text-left w-52">Saturation %</th>
+<th class="py-2.5 px-space-sm text-right">Villages 100%</th>
+<th class="py-2.5 px-space-sm text-center">Har Ghar Jal Status</th>
+<th class="py-2.5 px-space-sm text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-grid font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Goa -->
+<tr class="hover:bg-card-panchayat/40 transition-colors">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+<span>Goa</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">2,39,000</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-bold text-water-safe">2,39,000</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-water-safe h-full" style="width: 100%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-water-safe">100%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">378 / 378</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-village text-water-safe px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>Certified
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">Audit Dossier</button>
+</td>
+</tr>
+<!-- Row 2: A&N Islands -->
+<tr class="hover:bg-card-panchayat/40 transition-colors bg-surface-container-low/30">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+<span>A&amp;N Islands</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">62,037</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-bold text-water-safe">62,037</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-water-safe h-full" style="width: 100%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-water-safe">100%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">501 / 501</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-village text-water-safe px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>Certified
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">Audit Dossier</button>
+</td>
+</tr>
+<!-- Row 3: Haryana -->
+<tr class="hover:bg-card-panchayat/40 transition-colors">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+<span>Haryana</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">30,41,494</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-bold text-water-safe">30,41,494</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-water-safe h-full" style="width: 100%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-water-safe">100%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">6,841 / 6,841</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-village text-water-safe px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>Certified
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">Audit Dossier</button>
+</td>
+</tr>
+<!-- Row 4: Telangana -->
+<tr class="hover:bg-card-panchayat/40 transition-colors bg-surface-container-low/30">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+<span>Telangana</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">53,98,219</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-bold text-water-safe">53,98,219</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-water-safe h-full" style="width: 100%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-water-safe">100%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">12,769 / 12,769</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-village text-water-safe px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>Certified
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">Audit Dossier</button>
+</td>
+</tr>
+<!-- Row 5: Gujarat -->
+<tr class="hover:bg-card-panchayat/40 transition-colors">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+<span>Gujarat</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">91,18,444</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-bold text-water-safe">91,18,444</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-water-safe h-full" style="width: 100%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-water-safe">100%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">18,184 / 18,184</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-village text-water-safe px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>Certified
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">Audit Dossier</button>
+</td>
+</tr>
+<!-- Row 6: Punjab -->
+<tr class="hover:bg-card-panchayat/40 transition-colors bg-surface-container-low/30">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+<span>Punjab</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">34,24,670</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-bold text-water-safe">34,24,670</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-water-safe h-full" style="width: 100%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-water-safe">100%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">11,946 / 11,946</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-village text-water-safe px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>Certified
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">Audit Dossier</button>
+</td>
+</tr>
+<!-- Row 7: Maharashtra -->
+<tr class="hover:bg-card-panchayat/40 transition-colors">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Maharashtra</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">1,46,57,320</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-semibold text-secondary">1,32,82,463</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-tier-5-high h-full" style="width: 90.62%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-tier-5-high">90.62%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">34,120 / 40,551</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-panchayat text-secondary px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">published_with_changes</span>Reported
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">View Blocks</button>
+</td>
+</tr>
+<!-- Row 8: Bihar -->
+<tr class="hover:bg-card-panchayat/40 transition-colors bg-surface-container-low/30">
+<td class="py-2 px-space-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Bihar</span>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">1,66,23,556</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm font-semibold text-secondary">1,60,25,108</td>
+<td class="py-2 px-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-full bg-border-grid h-2 rounded-full overflow-hidden">
+<div class="bg-tier-5-high h-full" style="width: 96.4%"></div>
+</div>
+<span class="font-label-numeric-sm text-[12px] font-bold text-tier-5-high">96.40%</span>
+</div>
+</td>
+<td class="py-2 px-space-sm text-right font-label-numeric-sm">37,842 / 38,620</td>
+<td class="py-2 px-space-sm text-center">
+<span class="inline-flex items-center gap-1 bg-card-panchayat text-secondary px-2 py-0.5 rounded font-label-ui text-[10px] uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">published_with_changes</span>Reported
+                </span>
+</td>
+<td class="py-2 px-space-sm text-center">
+<button class="text-secondary hover:underline font-headline-sm text-[11px] uppercase">View Blocks</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer Info -->
+<div class="p-space-xs bg-surface-container-low border-t border-border-grid flex flex-col sm:flex-row items-center justify-between text-body-sm text-on-surface-variant">
+<span>Showing 8 of 36 States and Union Territories</span>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-white text-secondary font-bold text-[12px]">1</button>
+<button class="px-2 py-1 rounded hover:bg-surface-white text-[12px]">2</button>
+<button class="px-2 py-1 rounded hover:bg-surface-white text-[12px]">3</button>
+<button class="px-2 py-1 rounded hover:bg-surface-white text-[12px]">4</button>
+<span class="px-1">...</span>
+<button class="px-2 py-1 rounded hover:bg-surface-white text-[12px]">Next »</button>
+</div>
+</div>
+</div>
+<!-- Field Photographic Verification & Sensor Twin Showcase -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-white rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative h-44 bg-cover bg-center" data-alt="A smiling rural Indian woman and school children filling stainless steel vessels with clean tap water in a sunny Punjab village courtyard, with a prominent Jal Jeevan Mission Har Ghar Jal verification plaque mounted on a clean brick wall in crisp natural lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzpn-euKvO8RhXEFgJaqzgW3Rk8so96JzRfGWishS6r-ajkR-uHnxGlOCsk0xnKeerYzZKqSi4AoS7UNgSPqpNCgYG3MUuAGGgWzg1rcCC9usfC_nFY01FJVuVO5MPHdYrt__2RU9mZSj9iG0UuPoiD8HQHhm20YkNMJGmR4zKmScWJ3ZVT3NxovXllGF0axTKhom0PoAOybuHNQNg21JZpHiun_MplxPmiG25aS77HfaCweVs_UG-')">
+<span class="absolute top-2 right-2 bg-water-safe text-surface-white font-label-ui text-[10px] px-2 py-0.5 rounded uppercase font-bold">In-situ Verified</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-label-ui text-[10px] text-secondary uppercase font-bold">Proof of Flow Telemetry</span>
+<span class="font-headline-sm text-headline-sm text-primary mt-0.5">Village Saha, District Ambala</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Continuous supply of 58 LPCD verified through ultrasonic field flow meters.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-white rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative h-44 bg-cover bg-center" data-alt="Close-up of a state of the art SCADA water pressure monitoring valve and electronic telemetry box mounted in a modern rural booster pumping station in Haryana with digital LCD screen showing real-time flow rate readings in crisp industrial detail." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2M9ijK66873CiG0Y3pqqhpVBNwMR0zgHjjHv-UJfPDNrhuADry6cW1JDG02I6alFAScIOTLFI4_CG3cx_DXLHhrHqgBo9_YI96PZROyWDkS4Kv3MCP3-yBml1SWSGnVbDX2hqDWJNrBn_kX2Tj526-0xKyQEIwTE4EJ22AFUT5D2Rds44mo8-CJ2s-JlUFPQR3s_9IJ4VHiqgM11_uZ6BidPlFvlJfXxodtx-RTw-QBFX9YtTKmdy')">
+<span class="absolute top-2 right-2 bg-secondary text-surface-white font-label-ui text-[10px] px-2 py-0.5 rounded uppercase font-bold">Edge SCADA Core</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-label-ui text-[10px] text-secondary uppercase font-bold">Digital Twin Node</span>
+<span class="font-headline-sm text-headline-sm text-primary mt-0.5">Zone-4 Regional Feeder Mains</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Direct telemetry uplink active; residual pressure sustained at 1.4 Bar at tail-end taps.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-white rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative h-44 bg-cover bg-center" data-alt="Trained rural women village water committee members testing water samples with field test kits for chemical and microbiological purity in a sunlit Gram Panchayat office with Indian flag and official registers visible." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTO3VWPvB43liKtD6mDenUWBGWPKrQp8ig_TJMvxQ1v8dYbI3KjwwLtsn6BhllvhSOhxCV9WVeXoJU-3Rm66AZBw20KktQq9H9KrpOADNr1PmMbz4P1Spc0ZMpCf-J_CP16dazRc7m35vNcE3XOBETTOMr01ry_wGZyo4Sbx14Ifdl6THw7vrr63cxv3cPSTyvw8shwrDboHWcJusSu7fpwHGzjgtoDV1Epmqb1lb64qZzAxl4uiP3')">
+<span class="absolute top-2 right-2 bg-ashoka-gold text-surface-white font-label-ui text-[10px] px-2 py-0.5 rounded uppercase font-bold">FTK Surveillance</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-label-ui text-[10px] text-secondary uppercase font-bold">WQMIS Lab Sync</span>
+<span class="font-headline-sm text-headline-sm text-primary mt-0.5">Women FTK Water Champions</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Over 23.5 Lakh rural women trained across India to independently inspect 9 water quality parameters.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Citizen Proof-of-Flow Modal Dialog (Interactive) -->
+<div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4 hidden" id="proof-flow-dialog">
+<div class="bg-surface-white rounded-xl shadow-xl max-w-lg w-full p-space-lg flex flex-col gap-space-md border border-border-strong animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-grid">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-card-panchayat flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Citizen Proof-of-Flow Verifier</span>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant" onclick="document.getElementById('proof-flow-dialog').classList.add('hidden')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface">
+          Query the national cryptographic telemetry ledger to verify physical water flow across any rural tap connection or Gram Panchayat.
+        </p>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5">
+<span class="font-label-ui text-[10px] text-on-surface-variant uppercase">Enter FHTC ID or GPS Co-ordinates</span>
+<div class="flex gap-2">
+<input class="w-full bg-surface-white px-space-sm py-1.5 rounded font-label-numeric-sm border border-border-grid outline-none focus:border-secondary" type="text" value="HR-AMB-SAH-094182"/>
+<button class="bg-secondary text-surface-white px-space-sm py-1.5 rounded font-headline-sm text-[12px] uppercase">Verify</button>
+</div>
+</div>
+<div class="border border-border-grid rounded-lg p-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-[11px] text-secondary uppercase font-bold">Blockchain Telemetry Receipt</span>
+<span class="font-label-numeric-sm text-water-safe text-[11px] font-bold">MATCH CONFIRMED</span>
+</div>
+<div class="grid grid-cols-2 gap-2 font-body-sm text-[12px]">
+<div><span class="text-on-surface-variant">Village:</span> Saha (Ambala, HR)</div>
+<div><span class="text-on-surface-variant">Flow Today:</span> 2,410 Litres</div>
+<div><span class="text-on-surface-variant">Pressure:</span> 1.42 Bar (Compliant)</div>
+<div><span class="text-on-surface-variant">Disinfection:</span> Cl₂ 0.35 mg/L</div>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-space-xs">
+<button class="px-space-md py-1.5 border border-border-strong rounded font-headline-sm text-[12px] uppercase text-on-surface" onclick="document.getElementById('proof-flow-dialog').classList.add('hidden')">Close</button>
+<button class="px-space-md py-1.5 bg-primary text-surface-white rounded font-headline-sm text-[12px] uppercase" onclick="document.getElementById('proof-flow-dialog').classList.add('hidden')">Download Certificate</button>
+</div>
+</div>
+</div>
+<!-- Village Water Quality Modal Dialog -->
+<div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4 hidden" id="village-modal">
+<div class="bg-surface-white rounded-xl shadow-xl max-w-md w-full p-space-lg flex flex-col gap-space-md border border-border-strong">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-grid">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-water-safe text-[24px]">science</span>
+<span class="font-headline-sm text-headline-sm text-primary">Village Water Quality: Saha</span>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant" onclick="document.getElementById('village-modal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 font-body-sm">
+<div class="flex items-center justify-between p-2 bg-card-village rounded">
+<span class="font-semibold text-water-safe">Overall Assessment: SAFE FOR DRINKING</span>
+<span class="material-symbols-outlined text-water-safe text-[18px]">check_circle</span>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex justify-between border-b border-border-grid pb-1 text-[12px]">
+<span class="text-on-surface-variant">Turbidity (IS 10500):</span>
+<span class="font-label-numeric-sm font-semibold">0.82 NTU (Permissible &lt; 1.0)</span>
+</div>
+<div class="flex justify-between border-b border-border-grid pb-1 text-[12px]">
+<span class="text-on-surface-variant">pH Value:</span>
+<span class="font-label-numeric-sm font-semibold">7.34 (Optimal 6.5 - 8.5)</span>
+</div>
+<div class="flex justify-between border-b border-border-grid pb-1 text-[12px]">
+<span class="text-on-surface-variant">Total Dissolved Solids (TDS):</span>
+<span class="font-label-numeric-sm font-semibold">184 mg/L (Safe &lt; 500)</span>
+</div>
+<div class="flex justify-between border-b border-border-grid pb-1 text-[12px]">
+<span class="text-on-surface-variant">Free Residual Chlorine:</span>
+<span class="font-label-numeric-sm font-semibold">0.3 mg/L (Safe 0.2 - 0.5)</span>
+</div>
+<div class="flex justify-between text-[12px]">
+<span class="text-on-surface-variant">Bacteriological (E. Coli):</span>
+<span class="font-label-numeric-sm font-bold text-water-safe">NIL / 100ml</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end pt-space-xs">
+<button class="px-space-md py-1.5 bg-primary text-surface-white rounded font-headline-sm text-[12px] uppercase" onclick="document.getElementById('village-modal').classList.add('hidden')">Acknowledge</button>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    (function initJalSetuInteractions() {
+      // Interactive Map State Tooltip Handler
+      const stateElements = document.querySelectorAll('#states-layer path, #states-layer circle, #island-andaman circle');
+      const tooltip = document.getElementById('gis-state-tooltip');
+      const tooltipState = document.getElementById('tooltip-state');
+      const tooltipPct = document.getElementById('tooltip-pct');
+      const tooltipHh = document.getElementById('tooltip-hh');
+      const tooltipTrust = document.getElementById('tooltip-trust');
+
+      stateElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          const state = el.getAttribute('data-state') || 'District Zone';
+          const pct = el.getAttribute('data-pct') || '85%';
+          const hh = el.getAttribute('data-hh') || '--';
+          const trust = el.getAttribute('data-trust') || '98.0';
+
+          if (tooltipState) tooltipState.textContent = state;
+          if (tooltipPct) tooltipPct.textContent = pct;
+          if (tooltipHh) tooltipHh.textContent = hh;
+          if (tooltipTrust) tooltipTrust.textContent = trust + '/100';
+
+          el.classList.add('opacity-80');
+        });
+
+        el.addEventListener('mouseleave', () => {
+          el.classList.remove('opacity-80');
+        });
+      });
+
+      // Search Filter in Saturation League Table
+      const searchInput = document.getElementById('state-search-input');
+      const tableRows = document.querySelectorAll('#saturation-table tbody tr');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const term = e.target.value.toLowerCase().trim();
+          tableRows.forEach(row => {
+            const stateCell = row.cells[0]?.innerText.toLowerCase() || '';
+            row.style.display = stateCell.includes(term) ? '' : 'none';
+          });
+        });
+      }
+
+      // Chart Toggle Switcher
+      const btnCumulative = document.getElementById('btn-cumulative');
+      const btnYearly = document.getElementById('btn-yearly');
+      const splinePath = document.getElementById('trajectory-line');
+
+      if (btnCumulative && btnYearly) {
+        btnCumulative.addEventListener('click', () => {
+          btnCumulative.classList.add('bg-surface-white', 'text-secondary', 'font-semibold', 'shadow-sm');
+          btnCumulative.classList.remove('text-on-surface-variant');
+          btnYearly.classList.remove('bg-surface-white', 'text-secondary', 'font-semibold', 'shadow-sm');
+          btnYearly.classList.add('text-on-surface-variant');
+        });
+
+        btnYearly.addEventListener('click', () => {
+          btnYearly.classList.add('bg-surface-white', 'text-secondary', 'font-semibold', 'shadow-sm');
+          btnYearly.classList.remove('text-on-surface-variant');
+          btnCumulative.classList.remove('bg-surface-white', 'text-secondary', 'font-semibold', 'shadow-sm');
+          btnCumulative.classList.add('text-on-surface-variant');
+        });
+      }
+
+      // Export CSV Trigger Simulation
+      const exportBtn = document.getElementById('export-csv-btn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+          const originalText = exportBtn.innerHTML;
+          exportBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Generating...';
+          setTimeout(() => {
+            exportBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span> CSV Ready';
+            setTimeout(() => { exportBtn.innerHTML = originalText; }, 2000);
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

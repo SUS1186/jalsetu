@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-container":"#002147","on-error-container":"#93000a","tier-6-saturated":"#08306B","secondary-container":"#70aafe","on-primary-fixed-variant":"#2d476f","error":"#ba1a1a","tier-3-moderate":"#BCD9EA","surface-dim":"#cddbee","tertiary-fixed-dim":"#adc6ff","card-village":"#E8F8F0","on-primary-fixed":"#001b3d","background":"#f7f9ff","tier-4-progress":"#6BAED6","secondary":"#115eae","card-district":"#E8EEFA","surface-tint":"#465f88","surface-variant":"#d5e4f7","on-secondary":"#ffffff","secondary-fixed-dim":"#a7c8ff","ashoka-gold":"#B3802A","surface-container-highest":"#d5e4f7","on-tertiary-fixed-variant":"#004493","on-secondary-fixed-variant":"#004788","tertiary-fixed":"#d8e2ff","inverse-surface":"#243240","water-safe":"#1A7F48","surface":"#f7f9ff","inverse-on-surface":"#e8f1ff","surface-white":"#FFFFFF","inverse-primary":"#aec7f6","surface-container":"#e3efff","surface-container-lowest":"#ffffff","outline-variant":"#c4c6cf","on-surface":"#0e1d2a","on-secondary-container":"#003d77","tier-2-low":"#F3B39E","primary-fixed-dim":"#aec7f6","border-grid":"#DCE3EC","card-block":"#FDEAEB","surface-container-high":"#dbeafd","on-primary":"#ffffff","surface-container-low":"#edf4ff","on-surface-variant":"#44474e","on-secondary-fixed":"#001c3b","on-primary-container":"#708ab5","card-panchayat":"#EBF3FC","outline":"#74777f","secondary-fixed":"#d5e3ff","water-alert":"#C82333","tier-5-high":"#2171B5","tier-1-critical":"#F7D9CE","on-background":"#0e1d2a","on-tertiary":"#ffffff","on-tertiary-container":"#3f86f8","on-error":"#ffffff","primary-fixed":"#d6e3ff","error-container":"#ffdad6","primary":"#000a1e","surface-bright":"#f7f9ff","tertiary-container":"#00204c","on-tertiary-fixed":"#001a41","tertiary":"#000a21","border-strong":"#B0C0D4","portal-bg":"#F4F6F9"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"2rem","margin-mobile":"1rem","space-sm":"0.5rem","gutter-mobile":"0.75rem",margin:"2rem","space-lg":"1.25rem",gutter:"1rem","space-xs":"0.25rem","space-md":"0.75rem"},fontFamily:{"label-numeric-md":["JetBrains Mono"],"headline-lg":["Public Sans"],"headline-xl-mobile":["Public Sans"],"label-numeric-lg":["JetBrains Mono"],"headline-md":["Public Sans"],"body-sm":["Public Sans"],"body-md":["Public Sans"],"headline-xl":["Public Sans"],"headline-sm":["Public Sans"],"body-lg":["Public Sans"],"headline-lg-mobile":["Public Sans"],"label-numeric-sm":["JetBrains Mono"],"label-ui":["Public Sans"]},fontSize:{"label-numeric-md":["14px",{lineHeight:"18px",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-xl-mobile":["26px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-numeric-lg":["24px",{lineHeight:"28px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["20px",{lineHeight:"26px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"22px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg-mobile":["22px",{lineHeight:"28px",fontWeight:"600"}],"label-numeric-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-ui":["11px",{lineHeight:"14px",letterSpacing:"0.05em",fontWeight:"700"}]}}}};</script></head><body class="bg-portal-bg text-on-surface font-body-md"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-white border-b border-border-grid"><div class="h-[84px] w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex flex-col items-center justify-center text-ashoka-gold px-space-xs"><span class="material-symbols-outlined text-[32px] leading-none">account_balance</span><span class="font-label-ui text-[9px] uppercase tracking-wider text-ashoka-gold mt-0.5">सत्यमेव जयते</span></div><div class="h-11 w-px bg-border-grid"></div><div class="flex flex-col justify-center"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Jal Jeevan Mission - Har Ghar Jal</span><span class="font-body-sm text-body-sm text-on-surface-variant">(जल जीवन मिशन)</span></div><span class="font-body-sm text-[12px] leading-[15px] font-semibold text-secondary">Functional Household Tap Connection (FHTC) in every rural home</span><span class="font-label-ui text-[10px] text-on-surface-variant uppercase tracking-wider">Department of Drinking Water and Sanitation, Ministry of Jal Shakti</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low border border-border-grid px-space-sm py-1 rounded"><span class="w-2 h-2 rounded-full bg-water-safe animate-pulse"></span><span class="font-label-numeric-sm text-label-numeric-sm text-on-surface">SCADA CORE: 127.0.0.1:8000 | ONLINE</span></div><div class="flex items-center border border-border-grid rounded px-space-xs bg-surface-white h-9"><span class="material-symbols-outlined text-secondary text-[18px] mr-1">translate</span><select class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none cursor-pointer pr-1"><option>English</option><option>हिन्दी</option><option>मराठी</option><option>தமிழ்</option><option>తెలుగు</option><option>മലയാളം</option><option>বাংলা</option><option>ગુજરાતી</option></select></div><button class="flex items-center gap-1 border border-secondary text-secondary hover:bg-card-panchayat px-space-sm h-9 rounded font-headline-sm text-[12px] uppercase tracking-wider transition-colors"><span class="material-symbols-outlined text-[16px]">verified</span>Proof-of-Flow</button><button class="flex items-center gap-1 bg-water-alert hover:opacity-90 text-on-error px-space-sm h-9 rounded font-headline-sm text-[12px] uppercase tracking-wider transition-opacity"><span class="material-symbols-outlined text-[16px]">warning</span>Simulate Rupture</button><div class="flex items-center justify-center w-10 h-10 rounded-full border border-border-grid bg-card-panchayat text-secondary"><span class="material-symbols-outlined text-[24px]">water_drop</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-8 w-full bg-primary-container px-space-lg flex items-center justify-between text-card-panchayat font-label-numeric-sm text-label-numeric-sm border-t border-border-strong/20"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1 font-label-ui text-[10px] text-ashoka-gold uppercase tracking-wider bg-tertiary-container px-1.5 py-0.5 rounded"><span class="material-symbols-outlined text-[13px]">campaign</span>Bhashini Live</span><span class="text-card-panchayat truncate max-w-xl">Real-time Jal Jeevan Mission national telemetry ingest pipeline synchronized across 785 districts.</span></div><div class="flex items-center gap-space-lg text-surface-container-high"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">thermostat</span>Ambient: 28.4°C</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-water-safe">check_circle</span>Turbidity: 0.82 NTU (Safe)</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">sync</span>Last Sync: 10:42:15 IST</span></div></div></header><aside class="fixed left-0 top-[116px] bottom-0 w-20 bg-surface-white border-r border-border-grid z-40 flex flex-col items-center py-space-sm"><nav class="w-full flex flex-col gap-1" data-active-classes="bg-card-panchayat text-secondary border-l-4 border-secondary font-bold"><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="citizen-corner" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">groups</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Citizen Corner</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="fhtc-household-status" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">home_pin</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">FHTC Status</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="water-quality-monitoring" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">science</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Water Quality</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="survekshan" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">assessment</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Survekshan</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="schools-and-awcs" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">school</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Schools &amp; AWCs</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="scada-digital-twin" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">schema</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">SCADA Twin</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="cag-audit" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">policy</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">CAG Audit</span></a><a class="flex flex-col items-center justify-center py-2 px-1 text-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="contractor-sla-escrow" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">payments</span><span class="font-label-ui text-[9px] leading-[11px] uppercase tracking-normal">Contractor SLA</span></a></nav></aside><div class="pl-20"><main class="relative pt-[116px] w-full min-h-screen bg-portal-bg"><div class="flex flex-col w-full">
+<!-- System & Statutory Breadcrumb Bar -->
+<div class="w-full bg-surface-white border-b border-border-grid px-space-lg py-2.5 flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-ui text-label-ui tracking-wider uppercase">
+<span class="text-secondary font-bold">JJM-IMIS</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">CAG STATUTORY AUDIT CELL</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary">HABITATION DUAL-VERIFICATION &amp; TRUTH ENGINE</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="bg-card-district text-secondary px-2 py-0.5 rounded font-label-numeric-sm text-[11px] font-bold">REPORT REF: CAG/PA/DW&amp;S-09/2024</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-card-block text-water-alert font-label-numeric-sm text-[11px] font-bold border border-water-alert/30">
+<span class="w-2 h-2 rounded-full bg-water-alert animate-ping"></span>
+        CAG AUDIT CYCLE 2024-25 | STATUTORY FIELD INSPECTION &amp; GIS RECONCILIATION
+      </span>
+<div class="h-4 w-px bg-border-grid"></div>
+<span class="font-label-numeric-sm text-[12px] text-on-surface-variant">SEC: 28(2) CAG (DPC) ACT, 1971</span>
+</div>
+</div>
+<!-- Action Sub-header Bar -->
+<div class="w-full bg-surface-container-low border-b border-border-grid px-space-lg py-3 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-primary-container text-surface-white flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Ground Reality Verification &amp; Statutory Reconciliation</h1>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-ui uppercase tracking-wider bg-ashoka-gold/15 text-ashoka-gold font-bold border border-ashoka-gold/30">SPECIAL AUDIT TRUTH DECK</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time discrepancy detection between Central IMIS portal claims, high-resolution GIS drone demography, and edge SCADA telemetry.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3.5 bg-surface-white border border-border-strong rounded hover:bg-card-panchayat text-secondary flex items-center gap-1.5 font-headline-sm text-[12px] uppercase tracking-wider transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+        Audit Protocol SOP
+      </button>
+<button class="h-9 px-3.5 bg-surface-white border border-water-alert text-water-alert hover:bg-card-block rounded flex items-center gap-1.5 font-headline-sm text-[12px] uppercase tracking-wider transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+        Flag Habitation for Field Audit
+      </button>
+<button class="h-9 px-4 bg-primary-container text-surface-white rounded hover:bg-secondary flex items-center gap-2 font-headline-sm text-[12px] uppercase tracking-wider transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-ashoka-gold">picture_as_pdf</span>
+        Download CAG Special Report (PDF)
+      </button>
+</div>
+</div>
+<!-- Primary Page Body -->
+<div class="w-full max-w-[1440px] mx-auto p-space-lg flex flex-col gap-space-lg">
+<!-- Section 1: Target Habitation Header & Statutory Alert Banner -->
+<div class="bg-surface-white rounded border border-border-grid overflow-hidden shadow-sm">
+<!-- Habitation Details Top Strip -->
+<div class="bg-card-district/60 px-space-lg py-3 border-b border-border-grid flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">pin_drop</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary">Gharat Habitation (घरत वस्ती)</span>
+<span class="font-body-sm text-on-surface-variant">Census Village: Gharat | GP: Gharat-Budruk</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-numeric-sm text-[12px] mt-0.5">
+<span>District: <strong class="text-primary font-semibold">Chhatrapati Sambhaji Nagar</strong></span>
+<span>•</span>
+<span>State: <strong class="text-primary font-semibold">Maharashtra</strong></span>
+<span>•</span>
+<span>LGD Code: <code class="bg-surface-white px-1.5 py-0.2 rounded border border-border-grid text-primary">554921</code></span>
+<span>•</span>
+<span>CAG Circle: <span class="text-secondary font-semibold">WR-MUM-V/104</span></span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-ui text-label-ui uppercase tracking-wider px-2 py-1 rounded bg-card-panchayat text-secondary border border-secondary/30">Scheme ID: MH-CSN-2021-99201</span>
+<span class="font-label-ui text-label-ui uppercase tracking-wider px-2 py-1 rounded bg-primary-container text-surface-white">PFMS Milestone Stage 4</span>
+</div>
+</div>
+<!-- High Visibility Discrepancy Banner -->
+<div class="bg-water-alert text-surface-white px-space-lg py-3 flex items-start gap-3">
+<span class="material-symbols-outlined text-[26px] mt-0.5 shrink-0 text-amber-300">gpp_maybe</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm tracking-wide uppercase text-surface-white flex items-center gap-2">
+              Statutory Discrepancy Detected
+              <span class="text-[11px] bg-surface-white/20 px-2 py-0.5 rounded font-label-numeric-sm uppercase tracking-wider font-bold">Severity: Critical-1</span>
+</h2>
+<span class="font-label-numeric-sm text-surface-white/80 text-[12px]">CAG Field Inquest: Verified 14-Oct-2024</span>
+</div>
+<p class="font-body-md text-surface-white/95 mt-1 leading-snug">
+            IMIS 100% Saturation claim conflicts directly with high-resolution GIS Ground Drone Survey and terminal ultrasonic flow telemetry. Administrative reporting excludes fringe tribal habitations while physical delivery experiences severe terminal hydraulic deficit.
+          </p>
+</div>
+</div>
+<!-- Dual Verification Quick Stats Bento Grid (4 Tier Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border-grid bg-surface-white">
+<!-- Metric Card 1: IMIS Claim -->
+<div class="p-space-md flex flex-col justify-between relative overflow-hidden bg-card-district">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ui text-label-ui text-on-surface-variant uppercase tracking-wider">Administrative Ingest</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">cloud_done</span>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-primary">IMIS Official Claim</h3>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-label-numeric-lg text-[32px] font-bold text-primary">100.0%</span>
+<span class="font-label-numeric-sm text-on-surface-variant text-[13px]">Saturation</span>
+</div>
+<p class="font-label-numeric-sm text-on-surface-variant text-[12px] mt-1">240 of 240 baseline HHs certified</p>
+</div>
+<div class="mt-4 pt-2 border-t border-border-grid/60">
+<span class="inline-flex items-center gap-1 font-label-ui text-[10px] tracking-wider uppercase px-2 py-1 rounded bg-card-village text-water-safe font-bold border border-water-safe/40">
+<span class="material-symbols-outlined text-[13px]">verified</span> GOVT CERTIFIED (HAR GHAR JAL)
+            </span>
+</div>
+</div>
+<!-- Metric Card 2: CAG Ground Survey -->
+<div class="p-space-md flex flex-col justify-between relative overflow-hidden bg-card-block">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-water-alert"></div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ui text-label-ui text-water-alert uppercase tracking-wider font-bold">Drone GIS Reconciliation</span>
+<span class="material-symbols-outlined text-water-alert text-[18px]">satellite_alt</span>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-primary">CAG Ground Demographics</h3>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-label-numeric-lg text-[32px] font-bold text-water-alert">77.4%</span>
+<span class="font-label-numeric-sm text-water-alert font-bold text-[13px]">-22.6% True Deficit</span>
+</div>
+<p class="font-label-numeric-sm text-on-surface text-[12px] mt-1 font-semibold">240 connected of 310 real dwellings</p>
+</div>
+<div class="mt-4 pt-2 border-t border-water-alert/20">
+<span class="inline-flex items-center gap-1 font-label-ui text-[10px] tracking-wider uppercase px-2 py-1 rounded bg-water-alert text-surface-white font-bold">
+<span class="material-symbols-outlined text-[13px]">person_off</span> 70 UNMAPPED FRINGE HHS OMITTED
+            </span>
+</div>
+</div>
+<!-- Metric Card 3: Terminal Water Delivery Telemetry -->
+<div class="p-space-md flex flex-col justify-between relative overflow-hidden bg-surface-white">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-ashoka-gold"></div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ui text-label-ui text-on-surface-variant uppercase tracking-wider">Terminal Edge Telemetry</span>
+<span class="material-symbols-outlined text-ashoka-gold text-[18px]">speed</span>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-primary">Terminal Water Delivery</h3>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-label-numeric-lg text-[32px] font-bold text-primary">41.2</span>
+<span class="font-label-numeric-sm text-on-surface-variant text-[13px]">LPCD Tail-End</span>
+</div>
+<p class="font-label-numeric-sm text-water-alert font-semibold text-[12px] mt-1">vs 55.0 LPCD Statutory Norm (-25.1%)</p>
+</div>
+<div class="mt-4 pt-2 border-t border-border-grid">
+<span class="inline-flex items-center gap-1 font-label-ui text-[10px] tracking-wider uppercase px-2 py-1 rounded bg-card-block text-water-alert font-bold border border-water-alert/30">
+<span class="material-symbols-outlined text-[13px]">warning</span> BIS:10500 BREACH DETECTED
+            </span>
+</div>
+</div>
+<!-- Metric Card 4: Ground Reality Trust Score Radial -->
+<div class="p-space-md flex flex-col justify-between relative overflow-hidden bg-card-panchayat">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ui text-label-ui text-secondary uppercase tracking-wider font-bold">Integrity Metric</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">balance</span>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-primary">Ground Reality Trust Score</h3>
+<div class="mt-2 flex items-center justify-between">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-numeric-lg text-[32px] font-bold text-primary">64.2</span>
+<span class="font-label-numeric-sm text-on-surface-variant text-[14px]">/100</span>
+</div>
+<p class="font-label-ui text-[10px] uppercase tracking-wider text-water-alert font-bold mt-0.5">GRADE: PROBATIONARY WATCH</p>
+</div>
+<!-- Inline SVG Radial Trust Gauge -->
+<div class="w-16 h-16 shrink-0 relative flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-border-strong/40" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-water-alert" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="64.2, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute text-center">
+<span class="material-symbols-outlined text-[18px] text-water-alert">rule</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-grid">
+<div class="w-full bg-surface-white rounded-full h-1.5 overflow-hidden flex">
+<div class="bg-water-alert h-full" style="width: 64.2%"></div>
+<div class="bg-border-grid h-full" style="width: 35.8%"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label-numeric-sm text-on-surface-variant mt-1">
+<span>Ground Truth Gap</span>
+<span class="font-bold text-water-alert">35.8% Divergence</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Comprehensive Discrepancy Breakdown & Forensic Root-Cause Analysis -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column: Census 2011 Denominator Freeze vs GIS Drone (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-white rounded border border-border-grid shadow-sm flex flex-col">
+<div class="px-space-md py-3 bg-primary-container text-surface-white flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-ashoka-gold text-[20px]">layers</span>
+<h3 class="font-headline-sm text-headline-sm text-surface-white tracking-tight">Root Cause 1: Census 2011 Denominator Freeze vs High-Res Drone GIS</h3>
+</div>
+<span class="font-label-ui text-[10px] uppercase tracking-wider bg-tertiary text-card-panchayat px-2 py-0.5 rounded">CAG Evidence Cartography</span>
+</div>
+<div class="p-space-md flex flex-col gap-4 flex-1">
+<!-- Geospatial Map & Overlay Representation -->
+<div class="relative w-full h-[230px] rounded overflow-hidden border border-border-grid bg-surface-container-low flex flex-col justify-between">
+<div class="absolute inset-0 bg-cover bg-center opacity-60" data-location="Chhatrapati Sambhaji Nagar, Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-z3MbG3-IO4CROW9dFuWnk6JpL3alC_S8nqJP1GVRyvHA34-LokaMoumTDfB-AL3pk0YmUHgXMRF6xOYebqe7_dSk0nIFxav-WFCs1dsoaGVOV6OckctJRBYaI3Qd5pd8qGN6xyF_a6_kSBepg_CyFJLZ-Pwsq9OuzV-9nQ7LQskJKtBWoQO3St_v_v9Ir8cXaHL4cjbKGkxNO9vKVuO5nHLmKHeakweSMskeBWHGsQ-xtINxr0HH')"></div>
+<!-- Map Top Overlay: Cadastral Boundary Labels -->
+<div class="relative z-10 p-2 flex items-center justify-between bg-gradient-to-b from-primary/80 to-transparent">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-water-safe text-surface-white text-[10px] font-label-ui uppercase tracking-wider font-bold">2011 Revenue Village (240 HH)</span>
+<span class="px-2 py-0.5 rounded bg-water-alert text-surface-white text-[10px] font-label-ui uppercase tracking-wider font-bold">Adivasi Pada &amp; East Fringe (+70 HH)</span>
+</div>
+<span class="text-surface-white font-label-numeric-sm text-[11px] bg-primary/60 px-2 py-0.5 rounded">Orthomosaic Resolution: 3.2 cm/px</span>
+</div>
+<!-- Vector Map Annotation Layer (Inline SVG) -->
+<div class="absolute inset-0 z-10 pointer-events-none flex items-center justify-center p-4">
+<svg class="w-full h-full" fill="none" viewbox="0 0 600 200">
+<!-- ESR & Distribution Main -->
+<circle cx="80" cy="100" fill="#002147" r="14" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#002147" font-family="JetBrains Mono" font-size="10" font-weight="bold" x="70" y="130">ESR 120KL</text>
+<!-- Main Village Polygon (Green Boundary) -->
+<path d="M70,80 L220,40 L340,55 L310,160 L120,150 Z" fill="rgba(26, 127, 72, 0.15)" stroke="#1A7F48" stroke-dasharray="4 2" stroke-width="2.5"></path>
+<text fill="#1A7F48" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="170" y="105">Mapped Census Perimeter (240 HH)</text>
+<!-- Distribution Pipeline -->
+<path d="M80,100 L200,90 L300,100" stroke="#115eae" stroke-width="3"></path>
+<line stroke="#115eae" stroke-width="1.5" x1="200" x2="210" y1="90" y2="60"></line>
+<line stroke="#115eae" stroke-width="1.5" x1="250" x2="260" y1="95" y2="130"></line>
+<!-- Unmapped Gap Section -->
+<path d="M300,100 Q380,105 460,95" stroke="#C82333" stroke-dasharray="4 4" stroke-width="2"></path>
+<text fill="#C82333" font-family="JetBrains Mono" font-size="9" font-weight="bold" x="340" y="85">350m Unlaid Main</text>
+<!-- Fringe Cluster (Red Boundary) -->
+<path d="M440,50 L560,60 L570,165 L430,150 Z" fill="rgba(200, 35, 51, 0.18)" stroke="#C82333" stroke-width="2.5"></path>
+<text fill="#C82333" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="445" y="110">OMITTED PADA (70 HH)</text>
+<!-- Red Warning Markers -->
+<circle cx="480" cy="80" fill="#C82333" r="5"></circle>
+<circle cx="520" cy="95" fill="#C82333" r="5"></circle>
+<circle cx="500" cy="130" fill="#C82333" r="5"></circle>
+<circle cx="540" cy="140" fill="#C82333" r="5"></circle>
+</svg>
+</div>
+<!-- Map Bottom Bar -->
+<div class="relative z-10 px-3 py-1.5 bg-primary/90 text-surface-white flex items-center justify-between text-[11px] font-label-numeric-sm">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-water-alert"></span>
+                Drone Mission ID: DR-2024-MH-441 | Surveyor: State Remote Sensing Application Centre (MRSAC)
+              </span>
+<span>Coordinates: 19°53'14.2"N 75°23'48.9"E</span>
+</div>
+</div>
+<!-- Demographic Reconciliation Data Table -->
+<div class="border border-border-grid rounded overflow-hidden">
+<table class="w-full text-left font-body-sm text-[13px]">
+<thead class="bg-card-district font-label-ui text-label-ui uppercase tracking-wider text-primary border-b border-border-grid">
+<tr>
+<th class="py-2 px-3">Demographic Source Dataset</th>
+<th class="py-2 px-3 text-right">Household Count</th>
+<th class="py-2 px-3">Audit Classification</th>
+<th class="py-2 px-3 text-right">FHTC Recorded</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-grid font-label-numeric-sm">
+<tr class="hover:bg-card-panchayat/40">
+<td class="py-2 px-3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">history_edu</span>
+                    Census 2011 Statutory Base
+                  </td>
+<td class="py-2 px-3 text-right font-bold text-primary">240 HHs</td>
+<td class="py-2 px-3"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-[11px]">Official Baseline Denominator</span></td>
+<td class="py-2 px-3 text-right font-bold text-water-safe">240 (100.0%)</td>
+</tr>
+<tr class="hover:bg-card-panchayat/40">
+<td class="py-2 px-3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">flight_takeoff</span>
+                    CAG GIS Drone Mapping (2024)
+                  </td>
+<td class="py-2 px-3 text-right font-bold text-primary">310 HHs</td>
+<td class="py-2 px-3"><span class="px-2 py-0.5 rounded bg-card-panchayat text-secondary font-bold text-[11px]">Physical Ground Count</span></td>
+<td class="py-2 px-3 text-right font-bold text-secondary">240 (77.4%)</td>
+</tr>
+<tr class="bg-card-block/50 font-bold text-water-alert">
+<td class="py-2 px-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">indeterminate_check_box</span>
+                    Administrative Ghost Gap
+                  </td>
+<td class="py-2 px-3 text-right">+70 HHs</td>
+<td class="py-2 px-3"><span class="px-2 py-0.5 rounded bg-water-alert text-surface-white text-[11px]">Unserved Habitation Cluster</span></td>
+<td class="py-2 px-3 text-right">0 (0.0% Coverage)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Forensic Loophole Explanation Box -->
+<div class="p-3 bg-surface-container-low rounded border border-border-grid text-[12px] leading-relaxed">
+<span class="font-headline-sm text-[12px] text-primary uppercase tracking-wider block mb-1">
+<span class="material-symbols-outlined text-[15px] align-text-bottom text-ashoka-gold mr-1">report_problem</span>
+              Policy Loophole Analysis: "Denominator Exclusion Strategy"
+            </span>
+<p class="text-on-surface-variant font-body-sm">
+              The Gram Panchayat and DWSM certified Gharat Village as 100% "Har Ghar Jal" saturated by exclusively locking the census denominator to the 2011 Revenue Village boundary. This administratively excluded <strong>70 tribal/migrant households in Adivasi Pada and East Waddi</strong> located 350 meters beyond the central pipeline terminus. This constitutes a direct breach of JJM Circular W-11011/04/2021 regarding full contiguous habitation coverage.
+            </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Hydraulic Inequity & Tail-End Pressure Deficit (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-white rounded border border-border-grid shadow-sm flex flex-col">
+<div class="px-space-md py-3 bg-primary-container text-surface-white flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">compress</span>
+<h3 class="font-headline-sm text-headline-sm text-surface-white tracking-tight">Root Cause 2: Hydraulic Inequity &amp; Pressure Loss</h3>
+</div>
+<span class="font-label-ui text-[10px] uppercase tracking-wider bg-card-block text-water-alert px-2 py-0.5 rounded font-bold">SCADA Inquest</span>
+</div>
+<div class="p-space-md flex flex-col gap-4 flex-1 justify-between">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface font-semibold">Distribution Gradient: ESR to Tail-End Consumers</span>
+<span class="font-label-numeric-sm text-on-surface-variant text-[11px]">Sampling Freq: 15s Telemetry</span>
+</div>
+<!-- Hydraulic Node 1: Head End -->
+<div class="p-3 rounded bg-card-village border border-water-safe/30">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-water-safe"></span>
+<span class="font-body-md font-bold text-primary">Head-End (Near ESR Tank)</span>
+</div>
+<span class="font-label-ui text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-water-safe text-surface-white font-bold">Optimal Head</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-water-safe/20 text-center font-label-numeric-sm">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Water Vol</div>
+<div class="text-[14px] font-bold text-primary">92.4 <span class="text-[10px] font-normal">LPCD</span></div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Terminal Head</div>
+<div class="text-[14px] font-bold text-water-safe">2.14 <span class="text-[10px] font-normal">bar</span></div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Res. Chlorine</div>
+<div class="text-[14px] font-bold text-primary">0.42 <span class="text-[10px] font-normal">mg/L</span></div>
+</div>
+</div>
+</div>
+<!-- Hydraulic Node 2: Mid Network -->
+<div class="p-3 rounded bg-card-panchayat border border-secondary/30">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-body-md font-bold text-primary">Mid-Network (School &amp; GP Bhawan)</span>
+</div>
+<span class="font-label-ui text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-card-district text-secondary font-bold">Compliant</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-secondary/20 text-center font-label-numeric-sm">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Water Vol</div>
+<div class="text-[14px] font-bold text-primary">68.0 <span class="text-[10px] font-normal">LPCD</span></div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Terminal Head</div>
+<div class="text-[14px] font-bold text-secondary">1.65 <span class="text-[10px] font-normal">bar</span></div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Res. Chlorine</div>
+<div class="text-[14px] font-bold text-primary">0.35 <span class="text-[10px] font-normal">mg/L</span></div>
+</div>
+</div>
+</div>
+<!-- Hydraulic Node 3: Tail End (Deficit/Breach) -->
+<div class="p-3 rounded bg-card-block border border-water-alert/40">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-water-alert animate-ping"></span>
+<span class="font-body-md font-bold text-water-alert">Tail-End (East Ward Habitations)</span>
+</div>
+<span class="font-label-ui text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-water-alert text-surface-white font-bold">Severe Deficit</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-water-alert/30 text-center font-label-numeric-sm">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Water Vol</div>
+<div class="text-[15px] font-bold text-water-alert">34.6 <span class="text-[10px] font-normal">LPCD</span></div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Terminal Head</div>
+<div class="text-[15px] font-bold text-water-alert">0.48 <span class="text-[10px] font-normal">bar</span></div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase">Res. Chlorine</div>
+<div class="text-[15px] font-bold text-water-alert">0.04 <span class="text-[10px] font-normal">mg/L</span></div>
+</div>
+</div>
+<div class="mt-2 text-[11px] text-water-alert font-label-numeric-sm bg-surface-white/60 p-1.5 rounded flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                Intermittent duration: Only 45 mins/day delivery (Target: 4-6 hrs continuous).
+              </div>
+</div>
+</div>
+<!-- Hydraulic Bar Metric Visualizer -->
+<div class="p-3 bg-surface-container-low rounded border border-border-grid">
+<span class="font-label-ui text-[11px] uppercase tracking-wider text-primary font-bold block mb-2">Pressure Loss Gradient (Target min: 0.70 bar / 7m head)</span>
+<div class="space-y-2">
+<div>
+<div class="flex justify-between text-[11px] font-label-numeric-sm mb-0.5">
+<span class="text-on-surface-variant">Head End (0 - 400m)</span>
+<span class="font-bold text-primary">2.14 bar</span>
+</div>
+<div class="h-2 w-full bg-border-grid rounded-full overflow-hidden">
+<div class="h-full bg-tier-5-high" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-label-numeric-sm mb-0.5">
+<span class="text-on-surface-variant">Mid Network (400 - 950m)</span>
+<span class="font-bold text-primary">1.65 bar</span>
+</div>
+<div class="h-2 w-full bg-border-grid rounded-full overflow-hidden">
+<div class="h-full bg-tier-4-progress" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[11px] font-label-numeric-sm mb-0.5">
+<span class="text-water-alert font-bold">Tail End (950 - 1600m)</span>
+<span class="font-bold text-water-alert">0.48 bar (SUB-CRITICAL)</span>
+</div>
+<div class="h-2 w-full bg-border-grid rounded-full overflow-hidden">
+<div class="h-full bg-water-alert" style="width: 19%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Statutory Legal Citation -->
+<div class="p-2.5 bg-card-panchayat rounded border-l-4 border-secondary text-primary font-body-sm text-[12px] leading-tight">
+<strong>Statutory Breach Citation:</strong> "Non-compliance with JJM Operational Guidelines Clause 4.2: Failure to maintain equitable continuous supply @ 55 LPCD at terminal household taps at not less than 7m residual head pressure."
+          </div>
+</div>
+</div>
+</div>
+<!-- Section 3: Crowdsourced Citizen Ground Truth Ledger (Proof-of-Flow vs Dry Tap Submissions) -->
+<div class="bg-surface-white rounded border border-border-grid shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-md py-3 bg-primary text-surface-white flex flex-wrap items-center justify-between gap-2 border-b border-border-grid">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-ashoka-gold text-[22px]">how_to_reg</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-surface-white tracking-tight">Crowdsourced Citizen Ground Truth Ledger (Edge Proof-of-Flow)</h3>
+<p class="font-body-sm text-card-panchayat text-[11px]">Geotagged mobile app submissions validated against ultrasonic sensor telemetry logs</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-ui text-label-ui uppercase tracking-wider text-card-panchayat">Total Logs: 42 Active Records</span>
+<button class="px-2.5 py-1 bg-surface-white text-primary text-[11px] font-headline-sm uppercase tracking-wider rounded hover:bg-card-panchayat flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span> Filter Verified Only
+          </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-[13px] border-collapse">
+<thead class="bg-primary-container text-surface-white font-label-ui text-label-ui uppercase tracking-wider">
+<tr>
+<th class="py-2.5 px-3">Submission ID</th>
+<th class="py-2.5 px-3">Date / Time (IST)</th>
+<th class="py-2.5 px-3">Citizen Reporter</th>
+<th class="py-2.5 px-3">Reported Tap ID</th>
+<th class="py-2.5 px-3">Geotag Coords</th>
+<th class="py-2.5 px-3">Ground Status</th>
+<th class="py-2.5 px-3">Proof Evidence</th>
+<th class="py-2.5 px-3">Enforcement Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-grid font-label-numeric-sm">
+<!-- Log 1: Shantabai Shinde -->
+<tr class="hover:bg-card-block/40 bg-card-block/20 transition-colors">
+<td class="py-2.5 px-3 font-bold text-primary">SUB-8821</td>
+<td class="py-2.5 px-3 text-on-surface-variant">15-Oct-2024 07:18</td>
+<td class="py-2.5 px-3">
+<div class="font-bold text-primary font-body-sm">Shantabai Shinde</div>
+<div class="text-[11px] text-on-surface-variant">East Ward, Lane 3</div>
+</td>
+<td class="py-2.5 px-3 font-mono font-bold text-secondary">TAP_E12</td>
+<td class="py-2.5 px-3 text-[11px]">19.8872°N, 75.3969°E</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 font-label-ui text-[10px] tracking-wider uppercase px-2 py-0.5 rounded bg-water-alert text-surface-white font-bold">
+<span class="material-symbols-outlined text-[12px]">water_damage</span> DRY TAP (6 DAYS)
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1 text-[11px]">
+<span class="px-1.5 py-0.5 bg-surface-white border border-border-grid rounded text-secondary font-semibold cursor-pointer hover:bg-card-panchayat">
+<span class="material-symbols-outlined text-[12px] align-middle">photo_camera</span> Photo
+                  </span>
+<span class="px-1.5 py-0.5 bg-card-block border border-water-alert/40 rounded text-water-alert font-semibold cursor-pointer">
+<span class="material-symbols-outlined text-[12px] align-middle">mic</span> Audio (0:32)
+                  </span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-body-sm text-[12px] text-water-alert font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">send</span> Show-Cause to JE CSN-South
+                </span>
+</td>
+</tr>
+<!-- Log 2: Ramesh Rathod -->
+<tr class="hover:bg-surface-white bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3 font-bold text-primary">SUB-8819</td>
+<td class="py-2.5 px-3 text-on-surface-variant">14-Oct-2024 18:42</td>
+<td class="py-2.5 px-3">
+<div class="font-bold text-primary font-body-sm">Ramesh Rathod</div>
+<div class="text-[11px] text-on-surface-variant">Pada Cluster South</div>
+</td>
+<td class="py-2.5 px-3 font-mono font-bold text-secondary">TAP_P04</td>
+<td class="py-2.5 px-3 text-[11px]">19.8860°N, 75.3991°E</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 font-label-ui text-[10px] tracking-wider uppercase px-2 py-0.5 rounded bg-ashoka-gold text-surface-white font-bold">
+<span class="material-symbols-outlined text-[12px]">speed</span> LOW HEAD (&lt;0.2 BAR)
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1 text-[11px]">
+<span class="px-1.5 py-0.5 bg-surface-white border border-border-grid rounded text-secondary font-semibold cursor-pointer hover:bg-card-panchayat">
+<span class="material-symbols-outlined text-[12px] align-middle">videocam</span> Video (0:14)
+                  </span>
+<span class="px-1.5 py-0.5 bg-surface-white border border-border-grid rounded text-primary text-[10px]">GPS Validated</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-body-sm text-[12px] text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span> Booster Pump Requisitioned
+                </span>
+</td>
+</tr>
+<!-- Log 3: Prakash Chavan (School) -->
+<tr class="hover:bg-card-village/40 bg-surface-white transition-colors">
+<td class="py-2.5 px-3 font-bold text-primary">SUB-8814</td>
+<td class="py-2.5 px-3 text-on-surface-variant">14-Oct-2024 09:12</td>
+<td class="py-2.5 px-3">
+<div class="font-bold text-primary font-body-sm">Prakash Chavan</div>
+<div class="text-[11px] text-on-surface-variant">Zilla Parishad Primary School</div>
+</td>
+<td class="py-2.5 px-3 font-mono font-bold text-secondary">TAP_S01</td>
+<td class="py-2.5 px-3 text-[11px]">19.8884°N, 75.3940°E</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 font-label-ui text-[10px] tracking-wider uppercase px-2 py-0.5 rounded bg-water-safe text-surface-white font-bold">
+<span class="material-symbols-outlined text-[12px]">verified</span> POTABLE FLOW (58 LPCD)
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1 text-[11px]">
+<span class="px-1.5 py-0.5 bg-card-village border border-water-safe/40 rounded text-water-safe font-semibold">
+<span class="material-symbols-outlined text-[12px] align-middle">sensor_occupied</span> Flowmeter In-Situ
+                  </span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-body-sm text-[12px] text-water-safe font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Quality Re-Certified (Lab OK)
+                </span>
+</td>
+</tr>
+<!-- Log 4: Anusaya Bai (Ghost Pipeline) -->
+<tr class="hover:bg-card-block/40 bg-card-block/30 transition-colors">
+<td class="py-2.5 px-3 font-bold text-water-alert">SUB-8809</td>
+<td class="py-2.5 px-3 text-on-surface-variant">13-Oct-2024 16:05</td>
+<td class="py-2.5 px-3">
+<div class="font-bold text-primary font-body-sm">Anusaya Bai</div>
+<div class="text-[11px] text-on-surface-variant">Adivasi Basti (Unmapped Outer)</div>
+</td>
+<td class="py-2.5 px-3 font-mono font-bold text-water-alert">UNMAPPED_02</td>
+<td class="py-2.5 px-3 text-[11px]">19.8851°N, 75.4022°E</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 font-label-ui text-[10px] tracking-wider uppercase px-2 py-0.5 rounded bg-water-alert text-surface-white font-bold">
+<span class="material-symbols-outlined text-[12px]">block</span> GHOST STUB (NO PIPE)
+                </span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1 text-[11px]">
+<span class="px-1.5 py-0.5 bg-surface-white border border-border-grid rounded text-secondary font-semibold cursor-pointer hover:bg-card-panchayat">
+<span class="material-symbols-outlined text-[12px] align-middle">photo_camera</span> 3 Geotag Photos
+                  </span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-body-sm text-[12px] text-water-alert font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">assignment_late</span> CAG On-Site Inquest Ordered
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section 4: National Discrepancy Matrix (State-wise CAG Divergence League Table) -->
+<div class="bg-surface-white rounded border border-border-grid shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-md py-3 bg-surface-white border-b border-border-grid flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-card-district text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">table_chart</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">National Discrepancy Matrix (State-wise CAG Divergence League Table)</h3>
+<p class="font-body-sm text-on-surface-variant text-[11px]">Reconciliation across 785 Districts: IMIS Saturation vs CAG Ground Truth Audit Projections</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-2 text-on-surface-variant text-[18px]">search</span>
+<input class="h-8 pl-8 pr-3 bg-surface-container-low border border-border-grid rounded text-body-sm text-on-surface outline-none focus:border-secondary w-48" placeholder="Filter State / UT..." type="text"/>
+</div>
+<button class="h-8 px-2.5 bg-surface-white border border-border-grid rounded hover:bg-card-panchayat text-secondary flex items-center gap-1 font-headline-sm text-[11px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">file_download</span> CSV Export
+          </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-[13px] border-collapse">
+<thead class="bg-primary-container text-surface-white font-label-ui text-label-ui uppercase tracking-wider">
+<tr>
+<th class="py-2.5 px-3">State / Union Territory</th>
+<th class="py-2.5 px-3 text-right">Reported IMIS Saturation</th>
+<th class="py-2.5 px-3 text-right">CAG Ground Truth Est.</th>
+<th class="py-2.5 px-3 text-center">Coverage Variance (Gap)</th>
+<th class="py-2.5 px-3 text-right">Omitted Fringe Habitations</th>
+<th class="py-2.5 px-3 text-right">Avg LPCD Shortfall</th>
+<th class="py-2.5 px-3 text-right">Escrow Penalty Applied</th>
+<th class="py-2.5 px-3 text-center">CAG Audit Remediation Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-grid font-label-numeric-sm">
+<!-- Maharashtra -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-white transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-water-alert"></span>
+                Maharashtra
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">84.12%</td>
+<td class="py-2 px-3 text-right font-semibold text-water-alert">68.90%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-block text-water-alert font-bold text-[11px]">-15.22%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">4,120 Habitations</td>
+<td class="py-2 px-3 text-right font-semibold text-water-alert">-14.2 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹148.60 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-block text-water-alert font-label-ui text-[10px] uppercase font-bold border border-water-alert/30">STATUTORY INQUEST ACTIVE</span>
+</td>
+</tr>
+<!-- Uttar Pradesh -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-water-alert"></span>
+                Uttar Pradesh
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">79.45%</td>
+<td class="py-2 px-3 text-right font-semibold text-water-alert">61.20%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-block text-water-alert font-bold text-[11px]">-18.25%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">9,480 Habitations</td>
+<td class="py-2 px-3 text-right font-semibold text-water-alert">-19.5 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹312.40 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-block text-water-alert font-label-ui text-[10px] uppercase font-bold border border-water-alert/30">ESCROW FREEZE IMPOSED</span>
+</td>
+</tr>
+<!-- Madhya Pradesh -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-white transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-ashoka-gold"></span>
+                Madhya Pradesh
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">63.18%</td>
+<td class="py-2 px-3 text-right font-semibold text-ashoka-gold">54.05%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-ashoka-gold/15 text-ashoka-gold font-bold text-[11px]">-9.13%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">3,240 Habitations</td>
+<td class="py-2 px-3 text-right font-semibold text-on-surface-variant">-11.0 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹88.20 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-district text-secondary font-label-ui text-[10px] uppercase font-bold">RE-SURVEY IN PROGRESS</span>
+</td>
+</tr>
+<!-- Rajasthan -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-water-alert"></span>
+                Rajasthan
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">51.20%</td>
+<td class="py-2 px-3 text-right font-semibold text-water-alert">38.40%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-block text-water-alert font-bold text-[11px]">-12.80%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">5,110 Habitations (Dhanis)</td>
+<td class="py-2 px-3 text-right font-semibold text-water-alert">-21.8 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹194.50 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-block text-water-alert font-label-ui text-[10px] uppercase font-bold border border-water-alert/30">CAG RED FLAG</span>
+</td>
+</tr>
+<!-- Bihar -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-white transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-ashoka-gold"></span>
+                Bihar
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">96.40%</td>
+<td class="py-2 px-3 text-right font-semibold text-ashoka-gold">88.10%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-ashoka-gold/15 text-ashoka-gold font-bold text-[11px]">-8.30%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">2,890 Habitations (Tolās)</td>
+<td class="py-2 px-3 text-right font-semibold text-on-surface-variant">-8.4 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹64.10 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-district text-secondary font-label-ui text-[10px] uppercase font-bold">STATE EXPLANATION SOUGHT</span>
+</td>
+</tr>
+<!-- Gujarat -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+                Gujarat
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">100.0%</td>
+<td class="py-2 px-3 text-right font-semibold text-water-safe">96.80%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-village text-water-safe font-bold text-[11px]">-3.20%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">420 Habitations</td>
+<td class="py-2 px-3 text-right font-semibold text-water-safe">-2.1 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹12.00 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-village text-water-safe font-label-ui text-[10px] uppercase font-bold">VERIFIED RECONCILED</span>
+</td>
+</tr>
+<!-- Haryana -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-white transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-water-safe"></span>
+                Haryana
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">100.0%</td>
+<td class="py-2 px-3 text-right font-semibold text-water-safe">97.40%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-village text-water-safe font-bold text-[11px]">-2.60%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">185 Habitations</td>
+<td class="py-2 px-3 text-right font-semibold text-water-safe">-1.8 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹6.40 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-village text-water-safe font-label-ui text-[10px] uppercase font-bold">VERIFIED RECONCILED</span>
+</td>
+</tr>
+<!-- Tamil Nadu -->
+<tr class="hover:bg-card-panchayat/40 bg-surface-container-low/50 transition-colors">
+<td class="py-2 px-3 font-bold text-primary flex items-center gap-2 font-body-sm">
+<span class="w-2 h-2 rounded-full bg-ashoka-gold"></span>
+                Tamil Nadu
+              </td>
+<td class="py-2 px-3 text-right font-semibold text-primary">82.30%</td>
+<td class="py-2 px-3 text-right font-semibold text-ashoka-gold">75.10%</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-ashoka-gold/15 text-ashoka-gold font-bold text-[11px]">-7.20%</span>
+</td>
+<td class="py-2 px-3 text-right text-primary">1,410 Habitations</td>
+<td class="py-2 px-3 text-right font-semibold text-on-surface-variant">-6.5 LPCD</td>
+<td class="py-2 px-3 text-right font-mono font-bold text-primary">₹42.30 Cr</td>
+<td class="py-2 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-card-district text-secondary font-label-ui text-[10px] uppercase font-bold">REMEDIATION PLAN APPROVED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Micro Summary -->
+<div class="px-space-md py-2.5 bg-surface-container-low border-t border-border-grid flex flex-wrap items-center justify-between text-[12px] font-label-numeric-sm text-on-surface-variant">
+<span>Cumulative Escrow Withholding Triggered: <strong class="text-primary font-bold">₹866.20 Crore across 8 States</strong></span>
+<span>National Ground Saturation Index: <strong class="text-secondary font-bold">71.8% CAG Truth vs 84.6% IMIS Claim</strong></span>
+</div>
+</div>
+<!-- Section 5: Statutory Auditor Directives & Enforcement Protocol Box -->
+<div class="rounded border border-ashoka-gold/50 bg-surface-white shadow-sm overflow-hidden">
+<!-- Statutory Header -->
+<div class="bg-primary-container px-space-lg py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-ashoka-gold text-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-surface-white tracking-wide uppercase">
+              Statutory Auditor Directives &amp; Mandatory Enforcement Protocol
+            </h3>
+<p class="font-body-sm text-card-panchayat text-[11px]">
+              Issued under Authority of the Comptroller &amp; Auditor General of India (Article 149 of the Constitution of India)
+            </p>
+</div>
+</div>
+<span class="px-3 py-1 bg-ashoka-gold text-primary font-label-ui text-[10px] uppercase font-bold rounded">Binding Executive Orders</span>
+</div>
+<!-- Directive Cards Grid -->
+<div class="p-space-lg grid grid-cols-1 md:grid-cols-3 gap-space-md bg-surface-white">
+<!-- Directive 01 -->
+<div class="p-space-md rounded bg-card-district border-t-4 border-secondary flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-ui text-label-ui text-secondary font-bold uppercase tracking-wider">Directive 01</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-surface-white font-label-numeric-sm text-[10px] font-bold">30 DAYS MANDATE</span>
+</div>
+<h4 class="font-headline-sm text-[15px] font-bold text-primary mb-2">Immediate Revision of Habitation Denominator</h4>
+<p class="font-body-sm text-[13px] text-on-surface leading-relaxed">
+              Mandate the immediate inclusion of all <strong>70 fringe households</strong> within 30 days under the Special Habitation Expansion Fund (SHEF). The District Water &amp; Sanitation Mission (DWSM) is directed to map these habitations on the GIS portal and lay an extended 350-meter distribution line.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-grid/70 flex items-center justify-between text-[11px] font-label-numeric-sm text-secondary">
+<span>Enforcing Body: DWSM CSN</span>
+<span class="font-bold">Status: ORDER SERVED</span>
+</div>
+</div>
+<!-- Directive 02 -->
+<div class="p-space-md rounded bg-card-block border-t-4 border-water-alert flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-ui text-label-ui text-water-alert font-bold uppercase tracking-wider">Directive 02</span>
+<span class="px-2 py-0.5 rounded bg-water-alert text-surface-white font-label-numeric-sm text-[10px] font-bold">PFMS FREEZE</span>
+</div>
+<h4 class="font-headline-sm text-[15px] font-bold text-primary mb-2">Automatic Withholding of Contractor Escrow</h4>
+<p class="font-body-sm text-[13px] text-on-surface leading-relaxed">
+              Public Financial Management System (PFMS) automatic webhook has halted the <strong>₹48.5 Lakhs milestone payment</strong> to the infrastructure contractor (L&amp;T Rural Water Division). Escrow release is blocked until terminal telemetry records persistent ≥0.7 bar pressure across East Ward for 14 continuous days.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-water-alert/30 flex items-center justify-between text-[11px] font-label-numeric-sm text-water-alert">
+<span>PFMS Escrow Lock: #PFMS-MH-881</span>
+<span class="font-bold">STATUS: FROZEN</span>
+</div>
+</div>
+<!-- Directive 03 -->
+<div class="p-space-md rounded bg-card-panchayat border-t-4 border-ashoka-gold flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-ui text-label-ui text-ashoka-gold font-bold uppercase tracking-wider">Directive 03</span>
+<span class="px-2 py-0.5 rounded bg-ashoka-gold text-surface-white font-label-numeric-sm text-[10px] font-bold">REVOCATION NOTICE</span>
+</div>
+<h4 class="font-headline-sm text-[15px] font-bold text-primary mb-2">Gram Sabha Re-Certification &amp; Audit Review</h4>
+<p class="font-body-sm text-[13px] text-on-surface leading-relaxed">
+              Immediate revocation of the official "Har Ghar Jal" certification for Gharat Gram Panchayat. A special Gram Sabha must be reconvened with video documentation. Re-certification is made contingent on physical inspection and water quality verification by an Independent Academic Inspection Agency (IIT Bombay / VNIT).
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-border-grid/70 flex items-center justify-between text-[11px] font-label-numeric-sm text-primary">
+<span>Agency: IITB Water Cell</span>
+<span class="font-bold text-ashoka-gold">INQUEST SCHEDULED</span>
+</div>
+</div>
+</div>
+<!-- Auditor Verification Sign-off Seal -->
+<div class="px-space-lg py-3 bg-surface-container-low border-t border-border-grid flex flex-wrap items-center justify-between gap-3 text-on-surface-variant font-label-numeric-sm text-[11px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-ashoka-gold">verified_user</span>
+<span>Lead Statutory Auditor: <strong class="text-primary">Rajesh V. Deshmukh, IA&amp;AS (Principal Accountant General - Audit-I, Maharashtra)</strong></span>
+</div>
+<div class="flex items-center gap-3">
+<span>Digital Signature Hash: <code class="bg-surface-white px-1.5 py-0.5 rounded border border-border-grid text-[10px] text-primary">SHA256:7e9a8f23c...b04d1</code></span>
+<span class="text-water-safe font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> CAG Central Ingest Verified
+          </span>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Micro-interaction for active page selection indicator in the navigation shell
+    document.addEventListener("DOMContentLoaded", () => {
+      const cagNav = document.querySelector('aside nav a[data-path="cag-audit"]');
+      if (cagNav) {
+        cagNav.classList.add("bg-card-panchayat", "text-secondary", "border-l-4", "border-secondary", "font-bold");
+        cagNav.classList.remove("text-on-surface-variant");
+      }
+    });
+  </script>
+</div></main></div></body></html>
