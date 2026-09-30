@@ -71,6 +71,14 @@ function HarGharJalEmblem() {
 }
 
 export default function LoadingScreen({ onComplete }) {
+  // Auto-dismiss safety timer (1.8s)
+  React.useEffect(() => {
+    const autoTimer = setTimeout(() => {
+      if (typeof onComplete === "function") onComplete();
+    }, 1800);
+    return () => clearTimeout(autoTimer);
+  }, [onComplete]);
+
   React.useEffect(() => { const autoDismissTimer = setTimeout(() => { if (typeof onComplete === "function") onComplete(); }, 2000); return () => clearTimeout(autoDismissTimer); }, [onComplete]);
   // Auto-dismiss loading screen when 100% / Step 5 is reached
   useEffect(() => {
