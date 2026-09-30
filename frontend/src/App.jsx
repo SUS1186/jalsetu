@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { LanguageProvider, useLanguage } from "./context/LanguageContext";
+import { LanguageProvider, useLanguage, LANGUAGES } from "./context/LanguageContext";
 import LoadingScreen from "./components/LoadingScreen";
 import Overview from "./pages/Overview";
 import Survekshan from "./pages/Survekshan";
@@ -215,13 +215,14 @@ function AppShell() {
         <div className="h-[56px] px-4 flex items-center justify-between gap-3">
           {/* Left: Logo + Title */}
           <div className="flex items-center gap-3 min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-[28px] text-[#B3802A]">account_balance</span>
-              <div className="min-w-0">
-                <div className="text-[14px] font-bold text-[#002147] truncate">{t("app.title")}</div>
-                <div className="text-[10px] text-[#B3802A] truncate italic font-semibold">{t("app.slogan")}</div>
+          <div className="flex items-center gap-2.5">
+            <span className="material-symbols-outlined text-[#D97706] text-[28px]">account_balance</span>
+            <div>
+              <div className="text-[17px] font-black text-[#002147] tracking-tight">
+                JalSetu-Satat Jal, Surakshit Kal
               </div>
             </div>
+          </div>
           </div>
 
           {/* Center: Status + Disaster buttons */}
@@ -233,7 +234,7 @@ function AppShell() {
             {/* Language selector */}
             <select value={lang} onChange={(e) => setLang(e.target.value)}
               className="text-[11px] border border-[#DCE3EC] rounded px-2 py-1 bg-white focus:outline-none cursor-pointer">
-              {LANGUAGES.map((l) => (
+              {(LANGUAGES || []).map((l) => (
                 <option key={l.code} value={l.code}>{l.native}</option>
               ))}
             </select>
@@ -297,7 +298,7 @@ function AppShell() {
             </div>
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">thermostat</span>Ambient: 28.4°C
+                <span className="material-symbols-outlined text-[12px]">thermostat</span>Ambient: 28.4C
               </span>
               <span className="flex items-center gap-1">
                 <span className="material-symbols-outlined text-[12px] text-green-400">check_circle</span>Turbidity: 0.82 NTU (Safe)

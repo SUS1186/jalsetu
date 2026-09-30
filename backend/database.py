@@ -1,5 +1,5 @@
 """
-JalSetu 2.0 — Persistent Database Engine
+JalSetu — Persistent Database Engine
 SQLAlchemy + SQLite for civic infrastructure data.
 """
 import os
@@ -40,5 +40,6 @@ def init_db():
         EmergencyRoute,
         ContractorLedger,
         NationalSaturationState,
+        GeocodedImage,
     )
     Base.metadata.create_all(bind=engine)

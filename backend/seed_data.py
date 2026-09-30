@@ -1,7 +1,6 @@
 """
-JalSetu 2.0 — Database Seeder
-Seeds all 7 tables with realistic civic infrastructure data for Gharat Village, 
-Chhatrapati Sambhaji Nagar, Maharashtra and national JJM saturation figures.
+JalSetu — Database Seeder
+Seeds all 8 tables with realistic Gharat Village baseline data.
 """
 import os
 import sys
@@ -22,107 +21,109 @@ from backend.models import (
     EmergencyRoute,
     ContractorLedger,
     NationalSaturationState,
+    GeocodedImage,
 )
 
 
 def seed_telemetry(session):
-    """Seed 72 hours of nominal baseline telemetry at 15-min intervals for 4 nodes."""
-    nodes = [
-        {"node_id": "INTAKE_PUMP_01", "base_pressure": 3.92, "base_flow": 3.62, "base_amps": 13.4, "base_vib": 0.18, "base_tank": 82.0, "base_turb": 1.2, "base_cl": 0.48, "base_ph": 7.3},
-        {"node_id": "LEAK_NODE",      "base_pressure": 3.88, "base_flow": 3.58, "base_amps": 13.2, "base_vib": 0.15, "base_tank": 79.0, "base_turb": 1.4, "base_cl": 0.45, "base_ph": 7.2},
-        {"node_id": "JUNC_01",        "base_pressure": 3.72, "base_flow": 3.55, "base_amps": 12.8, "base_vib": 0.12, "base_tank": 77.0, "base_turb": 1.5, "base_cl": 0.40, "base_ph": 7.1},
-        {"node_id": "JUNC_03",        "base_pressure": 3.48, "base_flow": 3.50, "base_amps": 12.5, "base_vib": 0.10, "base_tank": 75.0, "base_turb": 1.6, "base_cl": 0.35, "base_ph": 7.0},
-    ]
+    """72 hours of nominal baseline telemetry for Gharat village."""
+    nodes = ["INTAKE_PUMP_01", "LEAK_NODE", "JUNC_01", "JUNC_03"]
+    base_time = datetime.utcnow() - timedelta(hours=72)
+    count = 0
+    for hour in range(72):
+        ts = base_time + timedelta(hours=hour)
+        for nid in nodes:
+            # Baseline nominal readings
+            p_base = 3.8 if nid != "INTAKE_PUMP_01" else 4.2
+            q_base = 3.6 if nid != "INTAKE_PUMP_01" else 14.5
+            p = round(p_base + random.uniform(-0.15, 0.15), 3)
+            q = round(q_base + random.uniform(-0.2, 0.2), 2)
+            amps = round(13.0 + random.uniform(-0.5, 0.5), 1) if "PUMP" in nid else 0.0
+            vib = round(0.15 + random.uniform(-0.02, 0.02), 3) if "PUMP" in nid else 0.0
+            tank = round(78.0 + random.uniform(-5.0, 5.0), 1)
+            turb = round(1.4 + random.uniform(-0.2, 0.2), 2)
+            chlorine = round(0.35 + random.uniform(-0.05, 0.05), 2)
+            ph = round(7.2 + random.uniform(-0.1, 0.1), 2)
 
-    now = datetime.utcnow()
-    start = now - timedelta(hours=72)
-    interval_minutes = 15
-    total_ticks = int(72 * 60 / interval_minutes)  # 288 ticks
-
-    records = []
-    for tick in range(total_ticks):
-        ts = start + timedelta(minutes=tick * interval_minutes)
-        for n in nodes:
-            jitter = lambda base, spread=0.05: round(base + random.uniform(-base * spread, base * spread), 3)
-            records.append(InfrastructureTelemetry(
+            session.add(InfrastructureTelemetry(
                 timestamp=ts,
-                node_id=n["node_id"],
-                pressure_bar=jitter(n["base_pressure"]),
-                flow_rate_lps=jitter(n["base_flow"]),
-                motor_current_amps=jitter(n["base_amps"]),
-                vibration_rms=jitter(n["base_vib"], 0.1),
-                tank_level_pct=jitter(n["base_tank"], 0.03),
-                turbidity_ntu=jitter(n["base_turb"], 0.08),
-                residual_chlorine_mg_l=jitter(n["base_cl"], 0.06),
-                ph_value=jitter(n["base_ph"], 0.02),
+                node_id=nid,
+                pressure_bar=p,
+                flow_rate_lps=q,
+                motor_current_amps=amps,
+                vibration_rms=vib,
+                tank_level_pct=tank,
+                turbidity_ntu=turb,
+                residual_chlorine_mg_l=chlorine,
+                ph_value=ph,
             ))
-
-    session.bulk_save_objects(records)
-    print(f"[Seeder] Inserted {len(records)} telemetry records (72h x 4 nodes)")
+            count += 1
+    print(f"[Seeder] Telemetry seeded ({count} records)")
 
 
 def seed_pipeline_burst(session):
-    """Pre-seeded pipeline burst incident: sudden pressure drop at JUNC_03."""
-    incident = PipelineBurstIncident(
-        node_id="JUNC_03",
-        timestamp=datetime.utcnow() - timedelta(hours=2),
+    """Pre-seeded pipeline burst incident."""
+    session.add(PipelineBurstIncident(
+        node_id="LEAK_NODE",
+        timestamp=datetime.utcnow() - timedelta(hours=3),
         severity="CRITICAL",
         pressure_drop_pct=87.4,
         estimated_water_loss_lph=18500.0,
-        lat=19.8740,
-        lng=75.3490,
+        lat=19.8762,
+        lng=75.3433,
         sla_deadline_hours=12.0,
-        repair_status="IN_PROGRESS",
+        repair_status="CREW_DISPATCHED",
         contractor_id="INFRA-MAHA-4091",
         liquidated_damages_inr=25000.0,
-    )
-    session.add(incident)
-    print("[Seeder] Pipeline burst incident seeded (JUNC_03, CRITICAL)")
+    ))
+    print("[Seeder] Pipeline burst incident seeded")
 
 
 def seed_flood_monitoring(session):
-    """Pre-seeded monsoon river flood incident: Godavari at danger level."""
-    flood = RiverFloodMonitoring(
+    """Pre-seeded monsoon river flood monitoring."""
+    session.add(RiverFloodMonitoring(
         station_id="GODAVARI_STN_04",
-        river_name="Godavari",
+        river_name="Godavari River (Gharat Gauge)",
         timestamp=datetime.utcnow(),
         current_level_meters=12.4,
-        warning_level_meters=9.5,
+        warning_level_meters=9.2,
         danger_level_meters=10.5,
         upstream_rainfall_24h_mm=184.0,
-        soil_saturation_pct=92.0,
-        flood_risk_probability=0.89,
-    )
-    session.add(flood)
-    print("[Seeder] Flood monitoring record seeded (Godavari, 12.4m)")
+        soil_saturation_pct=94.5,
+        flood_risk_probability=0.885,
+    ))
+    print("[Seeder] River flood monitoring seeded (danger level: 12.4m vs 10.5m mark)")
 
 
 def seed_vulnerable_assets(session):
-    """4 road segments submerged + 142 households in flood-risk zone."""
-    # Submerged road segments
+    """Pre-seeded vulnerable assets: 4 roads, 142 households, 1 WTP, 1 bridge."""
     roads = [
-        {"name": "NH-211 Underpass Segment A", "elev": 8.2, "lat": 19.881, "lng": 75.340, "risk": "SUBMERGED", "prio": 1},
-        {"name": "State Highway SH-60 Bridge Link", "elev": 9.1, "lat": 19.878, "lng": 75.348, "risk": "SUBMERGED", "prio": 1},
-        {"name": "Village Access Road — South", "elev": 9.8, "lat": 19.872, "lng": 75.352, "risk": "SUBMERGED", "prio": 2},
-        {"name": "Farmland Connector Track", "elev": 10.2, "lat": 19.869, "lng": 75.345, "risk": "SUBMERGED", "prio": 2},
+        {"name": "Gharat-Nandur High Road (KM 3-5)", "dem": 8.4, "lat": 19.871, "lng": 75.338, "risk": "SUBMERGED"},
+        {"name": "East Feeder Approach Cause-Way", "dem": 9.1, "lat": 19.879, "lng": 75.348, "risk": "SUBMERGED"},
+        {"name": "Zilla Parishad School Road", "dem": 10.2, "lat": 19.874, "lng": 75.341, "risk": "SUBMERGED"},
+        {"name": "Old Godavari River Bridge Approach", "dem": 7.9, "lat": 19.883, "lng": 75.346, "risk": "SUBMERGED"},
     ]
     for r in roads:
         session.add(VulnerableAsset(
-            asset_type="ROAD_SEGMENT", name=r["name"],
-            elevation_dem_meters=r["elev"], lat=r["lat"], lng=r["lng"],
-            inundation_risk=r["risk"], evacuation_priority=r["prio"],
+            asset_type="ROAD_SEGMENT",
+            name=r["name"],
+            elevation_dem_meters=r["dem"],
+            lat=r["lat"],
+            lng=r["lng"],
+            inundation_risk=r["risk"],
+            evacuation_priority=1,
         ))
 
-    # Household clusters in flood zone
+    # 142 households in flood-risk zone (elevations 8.5m - 12.0m)
     for i in range(1, 143):
+        elev = round(random.uniform(8.5, 12.0), 1)
+        risk = "SUBMERGED" if elev < 10.5 else "WARNING"
+        prio = 1 if elev < 9.5 else (2 if elev < 11.0 else 3)
         lat_offset = random.uniform(-0.008, 0.008)
         lng_offset = random.uniform(-0.008, 0.008)
-        elev = round(random.uniform(8.0, 11.5), 1)
-        risk = "SUBMERGED" if elev < 10.0 else "WARNING" if elev < 11.0 else "SAFE"
-        prio = 1 if risk == "SUBMERGED" else 2 if risk == "WARNING" else 4
         session.add(VulnerableAsset(
             asset_type="HOUSEHOLD",
-            name=f"HH-GHARAT-{i:03d}",
+            name=f"Household HH-GHARAT-{i:03d}",
             elevation_dem_meters=elev,
             lat=round(19.876 + lat_offset, 6),
             lng=round(75.343 + lng_offset, 6),
@@ -201,7 +202,7 @@ def seed_contractor_ledger(session):
 
 
 def seed_national_saturation(session):
-    """Official JJM state-wise saturation data."""
+    """Official state-wise saturation data."""
     states = [
         {"name": "Andhra Pradesh",     "hh": 8149807,  "conn": 6512440,  "pct": 79.91, "status": "REPORTED"},
         {"name": "Arunachal Pradesh",  "hh": 226891,   "conn": 226891,   "pct": 100.0, "status": "CERTIFIED"},
@@ -249,15 +250,87 @@ def seed_national_saturation(session):
     print(f"[Seeder] National saturation data seeded ({len(states)} states/UTs)")
 
 
+def seed_geocoded_images(session):
+    """Seeds 6 geo-coded field inspection records around Gharat village (lat ~19.876, lng ~75.343)."""
+    records = [
+        {
+            "watershed_id": "WS_MAHA_09_CD01",
+            "lat": 19.8792,
+            "lng": 75.3410,
+            "image_url": "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=400&q=80",
+            "feature_type": "Check Dam",
+            "health_status": "Silted (65%)",
+            "ai_tag": "High Siltation Detected — Desiltation Required",
+        },
+        {
+            "watershed_id": "WS_MAHA_09_IW02",
+            "lat": 19.8745,
+            "lng": 75.3468,
+            "image_url": "https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=400&q=80",
+            "feature_type": "Intake Well",
+            "health_status": "Operational",
+            "ai_tag": "Submersible Pump & Sump Nominal",
+        },
+        {
+            "watershed_id": "WS_MAHA_09_PT03",
+            "lat": 19.8820,
+            "lng": 75.3385,
+            "image_url": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80",
+            "feature_type": "Percolation Tank",
+            "health_status": "Intact",
+            "ai_tag": "Aquifer Recharge Seepage Normal",
+        },
+        {
+            "watershed_id": "WS_MAHA_09_PS04",
+            "lat": 19.8710,
+            "lng": 75.3490,
+            "image_url": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=400&q=80",
+            "feature_type": "Pipeline Siltation",
+            "health_status": "Severe Erosion",
+            "ai_tag": "Embankment Scour Risk — Reinforce Riprap",
+        },
+        {
+            "watershed_id": "WS_MAHA_09_CD05",
+            "lat": 19.8855,
+            "lng": 75.3440,
+            "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=400&q=80",
+            "feature_type": "Check Dam",
+            "health_status": "Intact",
+            "ai_tag": "Spillway Free of Debris & Micro-Fissures",
+        },
+        {
+            "watershed_id": "WS_MAHA_09_PT06",
+            "lat": 19.8680,
+            "lng": 75.3415,
+            "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=400&q=80",
+            "feature_type": "Percolation Tank",
+            "health_status": "Operational",
+            "ai_tag": "Soil Moisture Index Optimal (NDVI 0.62)",
+        },
+    ]
+    for r in records:
+        session.add(GeocodedImage(
+            watershed_id=r["watershed_id"],
+            latitude=r["lat"],
+            longitude=r["lng"],
+            image_url=r["image_url"],
+            feature_type=r["feature_type"],
+            health_status=r["health_status"],
+            ai_analysis_tag=r["ai_tag"],
+        ))
+    print(f"[Seeder] Geocoded inspection images seeded ({len(records)} records)")
+
+
 def run_seeder():
     """Main seeder — drops and recreates all tables, then populates."""
-    print("\n[JalSetu 2.0 Seeder] Initializing database...")
+    print("\n[JalSetu Seeder] Initializing database...")
 
     # Import models to register them with Base
     from backend.models import (
         InfrastructureTelemetry, PipelineBurstIncident,
         RiverFloodMonitoring, VulnerableAsset,
         EmergencyRoute, ContractorLedger, NationalSaturationState,
+        GeocodedImage,
     )
 
     # Drop existing and recreate
@@ -274,8 +347,9 @@ def run_seeder():
         seed_emergency_routes(session)
         seed_contractor_ledger(session)
         seed_national_saturation(session)
+        seed_geocoded_images(session)
         session.commit()
-        print("\n[JalSetu 2.0 Seeder] All data seeded successfully!\n")
+        print("\n[JalSetu Seeder] All 8 tables seeded successfully!\n")
     except Exception as e:
         session.rollback()
         print(f"[Seeder] ERROR: {e}")

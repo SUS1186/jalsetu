@@ -1,0 +1,225 @@
+<USER_REQUEST>
+# Antigravity Complete Master Production Prompt: JalSetu ("Satat Jal, Surakshit Kal")
+## AI-Powered Predictive Water Infrastructure Failure Prevention, 30m SRISHTI-DRISHTI Geospatial Intelligence & Flood Resilience System
+
+Act as a Principal Full-Stack Engineer, AI Architect, and Geospatial Data Scientist. Upgrade the existing JalSetu codebase in-place across `backend/` and `frontend/src/`. Do not discard existing working foundations; build upon them with zero placeholders, full type/syntax safety, and complete interactive wiring.
+
+Transform the platform into an end-to-end, predictive civic intelligence engine that addresses real operational gaps in the Government's Jal Jeevan Mission (JJM) portal.
+
+---
+
+### CRITICAL SYNTAX & RUNTIME GUARDRAILS (ZERO ERRORS ALLOWED)
+1. **No Corrupted Bracket Entities:** Never output `&gt;` as a tag closure (e.g., `<span className="..."&gt;`). Every opening tag must strictly close with a standard `>` or self-closing `/>`.
+2. **Escape Text Operators:** Never leave raw `<` or `>` characters in JSX text nodes or button labels. Always write them as `&lt;`, `&gt;`, `&rarr;` (for arrows), or wrapped as string literals (`{">"}`).
+3. **No Unescaped Style Blocks:** Any embedded `<style>` block must strictly use template literals: `<style>{`...`}</style>`. Never place raw CSS curly braces directly inside JSX.
+4. **Mandatory Self-Closing Tags:** All void HTML tags (`<input>`, `<img>`, `<hr>`, `<br>`) must explicitly self-close with `/>`.
+5. **CamelCase SVG & JSX Props:** Convert all hyphenated SVG attributes (`strokeWidth`, `strokeDasharray`, `fillRule`, `clipRule`, `className`, `htmlFor`).
+6. **No Undefined Lookups:** In the translation dictionary, every key must be present across all 8 languages without undefined lookups.
+7. **Zero Static Mock SVGs/Images:** All dials, progress rings, and charts must be 100% dynamic, rendered via `recharts` or reactive mathematical calculations driven by backend API props.
+
+---
+
+## 1. BRAND REIDENTITY & THEMATIC PALETTE
+
+* **Primary Title:** `JalSetu` (जलसेतु)
+* **National Slogan:** `Satat Jal, Surakshit Kal` (सतत जल, सुरक्षित कल | "Sustainable Water, Secure Tomorrow")
+* **Subtitle:** `AI-Powered Predictive Water Infrastructure Failure Prevention & Geospatial Decision Support System`
+* **Strict Removal:** Completely remove `2.0` and remove `Jal Jeevan Mission` from all primary branding, headers, tab bars, title tags in `frontend/index.html`, and `Header.jsx`. JalSetu must stand as an autonomous national platform.
+* **Color Palette (Civic Institutional Light Theme):**
+  * Canvas Background: `#F4F6F9`
+  * Surface Cards: `#FFFFFF` with border `1px solid #DCE3EC`
+  * Primary Bharat Navy: `#002147`
+  * Interactive Royal Blue: `#0B5CAB`
+  * Accent Blue: `#0080FF`
+  * National Emblem Gold: `#B3802A`
+  * Pastel Badges: Lavender `#E8EEFA` (Districts), Peach `#FDEAEB` (Blocks), Periwinkle `#EBF3FC` (Panchayats), Mint `#E8F8F0` (Villages)
+
+---
+
+## 2. CIVIC INITIALIZATION & LOADING SPLASH SCREEN (`frontend/src/components/LoadingScreen.jsx`)
+
+Implement an institutional loading splash screen displayed while the application fetches initial backend telemetry, database records, and map geometries:
+1. **Visual Elements:**
+   * Center-aligned Ashoka Lion Capital (`#B3802A`) and circular Har Ghar Jal water droplet emblem.
+   * Institutional Title: **जलसेतु (JalSetu)** with slogan *"Satat Jal, Surakshit Kal"*.
+   * Subtext: *Autonomous Rural Water Infrastructure & Flood Decision Support System*.
+2. **Dynamic Progress Simulation:**
+   * An animated progress bar stepping through system checks:
+     - `Connecting to National Water Informatics Center (NWIC) Gateway...`
+     - `Syncing EPANET Hydraulic Sensors (Gharat Village)...`
+     - `Fetching CWC River Level & IMD Precipitation Feeds...`
+     - `Calibrating A* / Dijkstra Emergency Route Topologies...`
+     - `Initializing Multilingual Bhashini AI Engine...`
+3. **Transition:**
+   * Fade out smoothly using a CSS opacity transition once data resolves (minimum 1.2s timeout). Include a fallback dismiss button if the backend is offline.
+
+---
+
+## 3. OVERVIEW PAGE RESTRUCTURE: DUAL-VIEW INDIA MAP + OPERATIONAL AUDIT CARD (`frontend/src/pages/Overview.jsx`)
+
+Refactor the section currently holding the full-width legacy gap card into a 2-column executive command layout:
+
+┌─────────────────────────────────────────────────────────────┬───────────────────────────────────────────┐
+│  [LEFT / CENTER 62%]                                        │  [RIGHT 38%]                              │
+│  Tap water supply in households (HHs) | India               │  Legacy JJM IMIS Portal vs. JalSetu       │
+│  [As on 30 Sep 2026]       [ State view | District view ]   │  [OPERATIONAL AUDIT]                      │
+│                                                             │                                           │
+│  Interactive India Vector Choropleth Map                    │  Gap 1: Outdated Census vs. GIS Drone/Crowd│
+│  - 28 States + 8 UTs (State view)                           │  Gap 2: Reactive vs. Isolation Forest AI  │
+│  - 754 Districts (District view)                            │  Gap 3: Climate/Flood Siloed vs. CWC River│
+│  - White ★ & Gold ⭐ Saturation Badges                      │  Gap 4: Zero Logistics vs. A*/Dijkstra    │
+│  - Hover tooltip with live metrics & trust score            │  Gap 5: Paper Claims vs. Smart Escrow Lock│
+│                                                             │                                           │
+│  [0%-10%][11%-25%][26%-50%][51%-75%][76%-<100%][100%]       │  [Gharat Habitation SCADA Live Node Pin]  │
+└─────────────────────────────────────────────────────────────┴───────────────────────────────────────────┘
+
+### A. Dual-View India Map Specifications:
+1. **Header Controls:**
+   * Left Title: `Tap water supply in households (HHs) | India` (styled in `#D97706` amber and `#002147` navy).
+   * Date Pill: `As on 30 Sep 2026` with circular calendar icon.
+   * Segmented Toggle: `[ State view | District view ]`.
+2. **Choropleth Color Tiers (Official 6 Bins):**
+   * `0%-10%`: `#F7D9CE`
+   * `11%-25%`: `#F3B39E`
+   * `26%-50%`: `#BCD9EA`
+   * `51%-75%`: `#6BAED6`
+   * `76%-<100%`: `#2171B5`
+   * `100% Saturation`: `#08306B` (Bharat Deep Navy)
+3. **State View vs. District View:**
+   * **State View:** Renders all 28 states and 8 UTs with white star `★` for 100% Har Ghar Jal Certified (Goa, Haryana, Gujarat, Telangana, Punjab, Puducherry, A&N Islands) and gold star `⭐` for Reported.
+   * **District View:** Renders all ~754 district polygons color-shaded into the 6 saturation tiers.
+4. **Interactive Hover Tooltip:**
+   * Displays State/District Name, Total Rural Households, Tap Connections Provided, Saturation Percentage, and JalSetu Ground Reality Trust Score.
+   * Clicking Maharashtra focuses on `Gharat Habitation SCADA Digital Twin`.
+5. **Horizontal Legend:**
+   * Renders the 6-tier gradient bar: `0%-10% | 11%-25% | 26%-50% | 51%-75% | 76%-<100% | 100%`.
+
+### B. Legacy Gaps Operational Audit Card (Right Column):
+* Badge: `OPERATIONAL AUDIT` in soft red.
+* **Gap 1 (Census vs. Ground Reality):** Official IMIS relies on 2011 Census; JalSetu uses GIS drone mapping and citizen audits, exposing 70 unmapped fringe homes and dry ghost taps.
+* **Gap 2 (Reactive vs. Predictive AI):** IMIS waits for complaints; JalSetu Part A runs Isolation Forest anomaly detection on pump vibration, current, and pressure to detect cavitation and micro-leaks before bursts.
+* **Gap 3 (Climate Silos vs. CWC Hydrology):** IMIS ignores river levels; JalSetu Part B integrates CWC river gauges and DEM elevation to predict inundation 48 hours early and auto-trip intake pumps at turbidity >50 NTU.
+* **Gap 4 (Zero Logistics vs. Safe Routing):** IMIS has no emergency navigation; JalSetu computes A* / Dijkstra flood-safe routes for relief tankers and repair crews.
+* **Gap 5 (Paper Approvals vs. Smart Escrow Locks):** IMIS approves paper bills; JalSetu autonomously freezes PFMS milestone escrow when telemetry confirms sustained pressure or quality breach.
+
+---
+
+## 4. PERSISTENT DATABASE SCHEMA (`backend/models.py`, `database.py`, `seed_data.py`)
+
+Implement SQLAlchemy ORM models with SQLite/PostgreSQL persistence:
+
+1. `infrastructure_telemetry`:
+   * `id`, `timestamp`, `node_id` (`INTAKE_PUMP_01`, `LEAK_NODE`, `JUNC_01`, `JUNC_03`), `pressure_bar`, `flow_rate_lps`, `motor_current_amps`, `vibration_rms`, `tank_level_pct`, `turbidity_ntu`, `residual_chlorine_mg_l`, `ph_value`.
+2. `pipeline_burst_incidents`:
+   * `incident_id`, `node_id`, `timestamp`, `severity` (`LOW`, `MEDIUM`, `CRITICAL`), `pressure_drop_pct`, `estimated_water_loss_lph`, `lat`, `lng`, `sla_deadline_hours`, `repair_status`, `contractor_id`, `liquidated_damages_inr`.
+3. `river_flood_monitoring`:
+   * `station_id` (`GODAVARI_STN_04`), `river_name`, `timestamp`, `current_level_meters`, `warning_level_meters`, `danger_level_meters`, `upstream_rainfall_24h_mm`, `soil_saturation_pct`, `flood_risk_probability` (0.0 to 1.0).
+4. `vulnerable_assets`:
+   * `asset_id`, `asset_type` (`HOUSEHOLD`, `ROAD_SEGMENT`, `BRIDGE`, `WATER_TREATMENT_PLANT`), `name`, `elevation_dem_meters`, `lat`, `lng`, `inundation_risk` (`SAFE`, `WARNING`, `SUBMERGED`), `evacuation_priority` (1 to 5).
+5. `emergency_routes`:
+   * `route_id`, `origin_lat`, `origin_lng`, `dest_lat`, `dest_lng`, `safe_waypoints_json`, `distance_km`, `travel_time_min`, `algorithm_used` (`A_STAR` or `DIJKSTRA`), `is_blocked_by_flood`.
+6. `contractor_ledger`:
+   * `contractor_id`, `agency_name` (`L&T Rural Water Division`), `contract_ref`, `warranty_expiry`, `escrow_balance_inr`, `escrow_status` (`PERMITTED` or `WITHHELD_ON_BREACH`), `active_penalties_inr`.
+7. `national_saturation_states`:
+   * `state_name`, `total_households`, `connections_provided`, `saturation_pct`, `status` (`REPORTED` or `CERTIFIED`).
+8. `geocoded_images`:
+   * `id`, `watershed_id`, `latitude`, `longitude`, `image_url`, `feature_type` (`Check Dam`, `Intake Well`, `Percolation Tank`, `Pipeline Siltation`), `health_status` (`Intact`, `Silted (65%)`, `Severe Erosion`, `Operational`), `ai_analysis_tag` (`High Vegetation Loss Detected`, `Structural Micro-Fissure`, `Siltation Hazard`), `timestamp`.
+
+### Database Seeder (`backend/seed_data.py`):
+Seed the database with:
+- 72 hours of nominal baseline telemetry for Gharat village (pressure ~3.8 bar, flow ~3.6 L/s, turbidity ~1.4 NTU).
+- Pre-seeded **Pipeline Burst Incident**: sudden pressure drop to 0.48 bar, 18,500 L/h water loss, 12-hour resolution SLA countdown, and ₹25,000 penalty log.
+- Pre-seeded **Monsoon River Flood Incident**: 184 mm rainfall in 24h, Godavari river gauge at 12.4 m (danger mark: 10.5 m), raw water turbidity at 54.2 NTU, 4 road segments submerged, and 142 households flagged in the flood-risk zone.
+- Pre-seeded state saturation records matching official data.
+- 6 geo-coded field inspection records around Gharat village (lat ~19.876, lng ~75.343) covering check dams, intake wells, and percolation tanks.
+
+---
+
+## 5. PREDICTIVE AI, LOGISTICS & WATERSHED ENDPOINTS (`backend/app.py`)
+
+Expose these endpoints in FastAPI:
+
+1. **Part A: Anomaly & Cavitation Predictor (`GET /api/infrastructure/prediction`):**
+   * Multi-sensor weighted anomaly calculation:
+     $$\text{Risk Score} = 0.35 \cdot \Delta P + 0.25 \cdot \Delta Q + 0.20 \cdot I_{\text{motor}} + 0.20 \cdot \text{Vibration}$$
+   * Returns: Status (`NORMAL`, `CAVITATION_WARNING`, `BURST_DETECTED`), anomaly probability, estimated time-to-failure, and affected sectors.
+2. **Part B: Flood Risk & Inundation Model (`GET /api/flood/risk-assessment`):**
+   * Evaluates upstream rainfall, river rise velocity, and DEM terrain elevation to return flood probabilities, list of submerged road segments, and intake pump shutdown commands.
+3. **Emergency Routing Engine (`POST /api/routes/flood-safe`):**
+   * Implements A* / Dijkstra graph routing on road coordinates, dynamically assigning $\infty$ weight to flooded road segments. Returns GeoJSON coordinates for safe relief delivery.
+4. **Live Telemetry & Audit Feeds (`GET /api/telemetry/live`, `GET /api/governance/audit`):**
+   * Continuously feeds real numerical data from the database into the frontend every 2 seconds.
+5. **Geo-Coded Inspection Images (`GET /api/watershed/geo-images`):**
+   * Returns ground-truth inspection records with coordinates and AI diagnostic tags.
+6. **SRISHTI-DRISHTI Thematic Overlays (`GET /api/watershed/thematic-layers`):**
+   * Returns 30m satellite layer configurations, drainage networks, NDVI vegetation indices, and catchment boundaries.
+
+---
+
+## 6. WATERSHED DECISION SUPPORT & LEAFLET GIS MAP (`FloodIntelligence.jsx`)
+
+On the Leaflet GIS Map tab:
+1. **SRISHTI-DRISHTI 30m Layer Toggles (Top-Right Leaflet Control):**
+   * Checkboxes/switches to toggle:
+     - ☑️ `30m SRISHTI-DRISHTI Satellite Composite`
+     - ☑️ `Watershed Surface Drainage Network (Blue vectors)`
+     - ☑️ `NDVI Vegetation & Soil Moisture Matrix (Green/amber overlay)`
+     - ☑️ `Geo-Coded Inspection Camera Pins`
+2. **Geo-Tagged Inspection Markers:**
+   * Fetches records from `/api/watershed/geo-images` and renders camera pins.
+   * Clicking a pin opens an inspection card with photo thumbnail, structure type (e.g., `Check Dam #WS_MAHA_09_CD01`), coordinates, health status badge, AI diagnosis (`High Siltation Detected - Desiltation Required`), and timestamp.
+3. **Flood Simulation & Evacuation Route:**
+   * Activating `Simulate River Flood` renders flooded road segments in red and draws the dynamic emerald green **A* / Dijkstra safe emergency tanker route** across dry roads.
+
+---
+
+## 7. REMAINING FRONTEND DASHBOARD SCREENS (`frontend/src/`)
+
+### A. SCADA Cyber-Physical Twin (`ScadaTwin.jsx`):
+* Interactive SVG hydraulic pipeline schematic showing flow between intake pump, treatment plant, storage reservoir, and village standposts.
+* Dynamic Recharts Line Graph showing rolling 20-tick historical pressure (bar) vs. flow rate (L/s).
+* Reactive gauges for pressure, flow, and vibration. Large potability grade indicator (`GRADE A - POTABLE` vs. `GRADE D - CONTAMINATED`).
+
+### B. CAG Discrepancy Audit (`CagAudit.jsx`):
+* SVG radial progress gauge for Ground Reality Trust Score (`86.7/100` nominal, `58.2/100` fault).
+* Discrepancy breakdown cards comparing official figures with ground reality audits.
+* Recharts bar chart comparing actual delivery (`84.0 LPCD` normal vs. `41.2 LPCD` burst) against the `55.0 LPCD` benchmark.
+
+### C. Contractor SLA & Smart Escrow Ledger (`ContractorSLA.jsx`):
+* Smart escrow padlock: switches from open green (`DISBURSEMENT_PERMITTED`) to flashing red (`WITHHELD_ON_BREACH`) upon fault.
+* 12-hour resolution countdown ring and real-time liquidated damages calculator (`₹25,000`).
+
+### D. Water Quality Lab & FTK Testing (`WaterQuality.jsx`):
+* Recharts Donut Chart: Clean vs. Contaminated vs. FTK Field Samples.
+* Key stat cards: Laboratories (2,850), Samples Tested (33.8L), Contaminated (69,593), FTK Women Trained (24.8L).
+
+### E. Navigation & Language Support:
+* Centralized `LanguageContext.jsx` covering **EN, HI, MR, TA, TE, ML, BN, GU** across all tabs, cards, and modal dialogs.
+* Scroll-to-top hook in `App.jsx` resetting scroll to `(0, 0)` immediately on tab switch.
+
+---
+
+## 8. VERIFICATION CHECKLIST
+1. Confirm `python backend/seed_data.py` seeds all tables including `geocoded_images` and `national_saturation_states`.
+2. Confirm FastAPI backend starts cleanly on port 8000 and responds to `/docs`.
+3. Confirm `npm run dev` builds the frontend with 0 JSX parsing errors.
+4. Verify the State View and District View toggle seamlessly on the India Map beside the Operational Audit Card.
+5. Verify the Leaflet map toggles the SRISHTI-DRISHTI layers and renders clickable inspection photo modals.
+6. Verify that triggering `Simulate Pipeline Burst` and `Simulate River Flood` updates the telemetry charts, map routing, and escrow padlock immediately.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-30T16:18:08+05:30.
+
+The user's current state is as follows:
+Running terminal commands:
+- cd C:\Users\sonar\jalsetu\frontend
+npm install
+npm install recharts leaflet r... (in c:\Users\sonar\jalsetu, running for 8m2s)
+- cd C:\Users\sonar\jalsetu
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+p... (in c:\Users\sonar\jalsetu, running for 7m16s)
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Claude Opus 4.6 (Thinking). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

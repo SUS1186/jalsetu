@@ -1,7 +1,8 @@
 """
-JalSetu 2.0 — SQLAlchemy ORM Models
-Seven relational tables covering telemetry, incidents, flood monitoring,
-vulnerable assets, emergency routes, contractor ledger, and national saturation.
+JalSetu — SQLAlchemy ORM Models
+Eight relational tables covering telemetry, incidents, flood monitoring,
+vulnerable assets, emergency routes, contractor ledger, national saturation,
+and geocoded watershed inspection images.
 """
 from sqlalchemy import (
     Column, Integer, Float, String, DateTime, Boolean, Text,
@@ -106,7 +107,7 @@ class ContractorLedger(Base):
 
 
 class NationalSaturationState(Base):
-    """State-wise JJM saturation data (official + ground-verified)."""
+    """State-wise saturation data (official + ground-verified)."""
     __tablename__ = "national_saturation_states"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -115,3 +116,18 @@ class NationalSaturationState(Base):
     connections_provided = Column(Integer, default=0)
     saturation_pct = Column(Float, default=0.0)
     status = Column(String(20), default="REPORTED")  # REPORTED or CERTIFIED
+
+
+class GeocodedImage(Base):
+    """Geo-coded watershed and infrastructure inspection imagery with AI diagnostic tags."""
+    __tablename__ = "geocoded_images"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    watershed_id = Column(String(50), nullable=False, index=True)
+    latitude = Column(Float, nullable=False)
+    longitude = Column(Float, nullable=False)
+    image_url = Column(String(255), nullable=False)
+    feature_type = Column(String(100), nullable=False)  # Check Dam, Intake Well, Percolation Tank, Pipeline Siltation
+    health_status = Column(String(50), nullable=False)  # Intact, Silted (65%), Severe Erosion, Operational
+    ai_analysis_tag = Column(String(255), nullable=False)  # High Vegetation Loss Detected, Structural Micro-Fissure, Siltation Hazard
+    timestamp = Column(DateTime, server_default=func.now(), nullable=False)
