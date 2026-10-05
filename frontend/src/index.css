@@ -120,3 +120,91 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Hide Google Translate UI elements */
+.goog-te-banner-frame,
+.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Clean Google Translate suppression */
+iframe.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+#google_translate_element {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+font font {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* Chart and Tooltip Anti-Glitch Shields */
+.recharts-wrapper,
+.recharts-surface,
+.recharts-tooltip-wrapper,
+.recharts-default-tooltip,
+svg.recharts-surface,
+canvas,
+[class*="tooltip"],
+[class*="chart"] svg {
+  translate: no !important;
+}
+
+.recharts-tooltip-wrapper {
+  pointer-events: none !important;
+  transition: transform 0.05s ease-out !important;
+}
+
+/* Prevent Google Translate font wrapping from breaking SVG text nodes */
+svg font {
+  fill: currentColor !important;
+}
+
+
+/* SVG Pie Chart Leader Line & Label Immunity */
+.recharts-pie-labels,
+.recharts-pie-label-line,
+.recharts-pie-label-text,
+.recharts-layer path,
+.recharts-surface,
+.recharts-surface * {
+  translate: no !important;
+}
+
+path.recharts-pie-label-line {
+  stroke-opacity: 0.8 !important;
+  display: inline !important;
+  visibility: visible !important;
+}
+
+text.recharts-pie-label-text {
+  fill: #002147 !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  display: inline !important;
+  visibility: visible !important;
+}

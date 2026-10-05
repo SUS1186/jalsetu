@@ -1,5 +1,6 @@
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
+const t = (k) => k;
 import React, { useState, useEffect, useRef } from "react";
-import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import LoadingScreen from "./components/LoadingScreen";
 import Overview from "./pages/Overview";
 import Survekshan from "./pages/Survekshan";
@@ -59,13 +60,13 @@ function CitizenModal({ isOpen, onClose, t }) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm">
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
         <div className="bg-[#002147] px-5 py-4 flex items-center gap-3">
-          <span className="material-symbols-outlined text-[#B3802A] text-[24px]">verified</span>
+          <span translate="no" className="notranslate material-symbols-outlined text-[#B3802A] text-[24px]">verified</span>
           <h2 className="text-white text-[16px] font-bold">{t("citizen.title")}</h2>
         </div>
 
         {success ? (
           <div className="p-8 text-center">
-            <span className="material-symbols-outlined text-[48px] text-green-600 mb-3">check_circle</span>
+            <span translate="no" className="notranslate material-symbols-outlined text-[48px] text-green-600 mb-3">check_circle</span>
             <p className="text-[14px] font-semibold text-green-800">{t("citizen.success")}</p>
           </div>
         ) : (
@@ -80,11 +81,11 @@ function CitizenModal({ isOpen, onClose, t }) {
               <div className="flex gap-3">
                 <button onClick={() => setFlowing(true)}
                   className={`flex-1 py-2 rounded border text-[13px] font-semibold transition-colors ${flowing ? "bg-green-100 border-green-400 text-green-800" : "bg-white border-[#DCE3EC] text-[#44474e]"}`}>
-                  <span className="material-symbols-outlined text-[16px] align-middle mr-1">check</span>{t("citizen.yes")}
+                  <span translate="no" className="notranslate material-symbols-outlined text-[16px] align-middle mr-1">check</span>{t("citizen.yes")}
                 </button>
                 <button onClick={() => setFlowing(false)}
                   className={`flex-1 py-2 rounded border text-[13px] font-semibold transition-colors ${!flowing ? "bg-red-100 border-red-400 text-red-800" : "bg-white border-[#DCE3EC] text-[#44474e]"}`}>
-                  <span className="material-symbols-outlined text-[16px] align-middle mr-1">close</span>{t("citizen.no")}
+                  <span translate="no" className="notranslate material-symbols-outlined text-[16px] align-middle mr-1">close</span>{t("citizen.no")}
                 </button>
               </div>
             </div>
@@ -100,7 +101,7 @@ function CitizenModal({ isOpen, onClose, t }) {
               </button>
               <button onClick={handleSubmit} disabled={submitting}
                 className="flex-1 py-2 rounded bg-[#0B5CAB] text-white text-[13px] font-semibold hover:bg-[#094a8d] disabled:opacity-50 flex items-center justify-center gap-2">
-                <span className="material-symbols-outlined text-[16px]">send</span>
+                <span translate="no" className="notranslate material-symbols-outlined text-[16px]">send</span>
                 {t("citizen.submit")}
               </button>
             </div>
@@ -113,7 +114,18 @@ function CitizenModal({ isOpen, onClose, t }) {
 
 /* ────── Main App Shell ────── */
 function AppShell() {
-  const { t, lang, setLang, LANGUAGES } = useLanguage();
+  const { language, setLanguage, t = ((k) => k) } = useLanguage();
+
+
+
+
+
+  
+  
+  
+  
+
+  
 
   const [showLoading, setShowLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("overview");
@@ -216,9 +228,9 @@ function AppShell() {
           {/* Left: Logo + Title */}
           <div className="flex items-center gap-3 min-w-0">
           <div className="flex items-center gap-2.5">
-            <span className="material-symbols-outlined text-[#D97706] text-[28px]">account_balance</span>
+            <span translate="no" className="notranslate material-symbols-outlined text-[#D97706] text-[28px]" translate="no" className="notranslate material-symbols-outlined text-[#002147] text-2xl">account_balance</span>
             <div>
-              <div className="text-[17px] font-black text-[#002147] tracking-tight">
+              <div className="notranslate text-[17px] font-black text-[#002147] tracking-tight">
                 JalSetu-Satat Jal, Surakshit Kal
               </div>
             </div>
@@ -232,38 +244,50 @@ function AppShell() {
             </span>
 
             {/* Language selector */}
-            <select value={lang} onChange={(e) => setLang(e.target.value)}
-              className="text-[11px] border border-[#DCE3EC] rounded px-2 py-1 bg-white focus:outline-none cursor-pointer">
-              {LANGUAGES.map((l) => (
-                <option key={l.code} value={l.code}>{l.native}</option>
-              ))}
-            </select>
+            <select
+            translate="no"
+            value={language || "en"}
+            onChange={(e) => setLanguage && setLanguage(e.target.value)}
+            className="notranslate bg-white border border-[#DCE3EC] rounded-lg px-2.5 py-1 text-xs font-bold text-[#002147] focus:outline-none cursor-pointer shadow-xs min-w-[130px]"
+          >
+            <option translate="no" value="en">English</option>
+            <option translate="no" value="hi">हिन्दी (Hindi)</option>
+            <option translate="no" value="mr">मराठी (Marathi)</option>
+            <option translate="no" value="ta">தமிழ் (Tamil)</option>
+            <option translate="no" value="te">తెలుగు (Telugu)</option>
+            <option translate="no" value="bn">বাংলা (Bengali)</option>
+            <option translate="no" value="gu">ગુજરાતી (Gujarati)</option>
+            <option translate="no" value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option translate="no" value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+            <option translate="no" value="ml">മലയാളം (Malayalam)</option>
+            <option translate="no" value="or">ଓଡ଼ିଆ (Odia)</option>
+          </select>
           </div>
 
           {/* Right: Action buttons */}
           <div className="flex items-center gap-2">
             <button onClick={() => setCitizenModalOpen(true)}
               className="flex items-center gap-1.5 border border-[#0B5CAB] text-[#0B5CAB] hover:bg-[#EBF3FC] px-3 py-1.5 rounded text-[11px] font-bold uppercase tracking-wider transition-colors">
-              <span className="material-symbols-outlined text-[16px]">verified</span>
-              {t("header.proof_of_flow")}
+              <span translate="no" className="notranslate material-symbols-outlined text-[16px]">verified</span>
+              {t("header.PROOF-OF-FLOW")}
             </button>
 
             {isAnyDisaster ? (
               <button onClick={stopAll}
                 className="flex items-center gap-1.5 bg-[#44474e] hover:bg-[#333] text-white px-3 py-1.5 rounded text-[11px] font-bold uppercase tracking-wider transition-colors">
-                <span className="material-symbols-outlined text-[16px]">stop_circle</span>
+                <span translate="no" className="notranslate material-symbols-outlined text-[16px]">stop_circle</span>
                 {t("header.stop_simulation")}
               </button>
             ) : (
               <>
                 <button onClick={handleToggleBurst}
                   className="flex items-center gap-1.5 bg-[#C82333] hover:bg-[#a51d2a] text-white px-3 py-1.5 rounded text-[11px] font-bold uppercase tracking-wider transition-colors">
-                  <span className="material-symbols-outlined text-[16px]">plumbing</span>
+                  <span translate="no" className="notranslate material-symbols-outlined text-[16px]">plumbing</span>
                   {t("header.simulate_burst")}
                 </button>
                 <button onClick={handleToggleFlood}
                   className="flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white px-3 py-1.5 rounded text-[11px] font-bold uppercase tracking-wider transition-colors">
-                  <span className="material-symbols-outlined text-[16px]">flood</span>
+                  <span translate="no" className="notranslate material-symbols-outlined text-[16px]">flood</span>
                   {t("header.simulate_flood")}
                 </button>
               </>
@@ -274,7 +298,7 @@ function AppShell() {
         {/* Flood alert banner */}
         {isFloodActive && (
           <div className="bg-amber-500 text-white px-4 py-2 flex items-center gap-2 text-[12px] font-semibold animate-pulse">
-            <span className="material-symbols-outlined text-[18px]">warning</span>
+            <span translate="no" className="notranslate material-symbols-outlined text-[18px]">warning</span>
             {t("header.flood_alert")}
           </div>
         )}
@@ -282,7 +306,7 @@ function AppShell() {
         {/* Burst alert banner */}
         {isBurstActive && (
           <div className="bg-red-600 text-white px-4 py-2 flex items-center gap-2 text-[12px] font-semibold animate-pulse">
-            <span className="material-symbols-outlined text-[18px]">emergency</span>
+            <span translate="no" className="notranslate material-symbols-outlined text-[18px]">emergency</span>
             PIPE BURST ACTIVE — Pressure at JUNC_03 dropped to 0.48 bar. NRW Loss: 38.2%. Escrow withheld.
           </div>
         )}
@@ -292,19 +316,19 @@ function AppShell() {
           <div className="h-[28px] bg-[#002147] px-4 flex items-center justify-between text-[10px] text-[#94a3b8]">
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-1 text-[#B3802A] uppercase tracking-wider text-[9px] font-bold bg-[#00204c] px-1.5 py-0.5 rounded">
-                <span className="material-symbols-outlined text-[12px]">campaign</span>Bhashini Live
+                <span translate="no" className="notranslate material-symbols-outlined text-[12px]">campaign</span>Bhashini Live
               </span>
               <span>Real-time Jal Jeevan Mission national telemetry ingest pipeline synchronized across 785 districts.</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">thermostat</span>Ambient: 28.4°C
+                <span translate="no" className="notranslate material-symbols-outlined text-[12px]">thermostat</span><span translate="no" className="notranslate">Ambient: 28.4°C
               </span>
               <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px] text-green-400">check_circle</span>Turbidity: 0.82 NTU (Safe)
+                <span translate="no" className="notranslate material-symbols-outlined text-[12px] text-green-400">check_circle</span>Turbidity: 0.82 NTU (Safe)
               </span>
               <span className="flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">sync</span>Last Sync: {new Date().toLocaleTimeString("en-IN")}
+                <span translate="no" className="notranslate material-symbols-outlined text-[12px]">sync</span></span>Last Sync: {new Date().toLocaleTimeString("en-IN")}
               </span>
             </div>
           </div>
@@ -323,7 +347,7 @@ function AppShell() {
                   ? "bg-[#EBF3FC] text-[#0B5CAB] border-l-[3px] border-[#0B5CAB] font-bold"
                   : "text-[#44474e] hover:bg-[#F7F9FF] hover:text-[#0e1d2a] border-l-[3px] border-transparent"
               }`}>
-              <span className="material-symbols-outlined text-[22px] mb-0.5">{item.icon}</span>
+              <span translate="no" className="notranslate material-symbols-outlined text-[22px] mb-0.5">{item.icon}</span>
               <span className="text-[9px] leading-[11px] uppercase tracking-normal font-semibold">{t(item.labelKey)}</span>
             </button>
           );

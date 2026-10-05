@@ -37,7 +37,7 @@ export default function SchoolsAWC() {
     <div className="flex flex-col gap-6 p-6">
       {/* ── Title ── */}
       <div>
-        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">{t("schools.title")}</h1>
+        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">School & Anganwadi Tap Water Security</h1>
         <p className="text-[13px] text-[#44474e] mt-1">
           हमारे बच्चों के लिए स्वच्छ पेयजल — 100% Institutional Tap Water Saturation
         </p>
@@ -119,7 +119,7 @@ export default function SchoolsAWC() {
         </div>
 
         <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" className="notranslate" translate="no">
             {metricView === "counts" ? (
               <BarChart data={CHART_DATA} margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />

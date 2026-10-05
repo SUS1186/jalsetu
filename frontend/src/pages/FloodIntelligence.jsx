@@ -418,7 +418,7 @@ export default function FloodIntelligence({ isFloodActive, setActiveTab }) {
         opacity: 0.95,
       });
       routeLine.bindTooltip(
-        "<b>A* / DIJKSTRA SAFE TANKER ROUTE</b><br/>Distance: 4.8 km &bull; 13.7 min &bull; Zero Inundation Risk",
+        "<b>A* / DIJKSTRA SAFE TANKER ROUTE</b><br/>Distance: 4.8 km • 13.7 min • Zero Inundation Risk",
         { sticky: true }
       );
       routeGroup.addLayer(routeLine);
@@ -574,7 +574,7 @@ export default function FloodIntelligence({ isFloodActive, setActiveTab }) {
 
           {/* Quick Info Box */}
           <div className="mt-3 pt-2 border-t border-[#DCE3EC] text-[9px] text-[#74777f] font-mono">
-            Provider: ISRO Resourcesat-2 / Sentinel-2 L2A &bull; 30m Grid
+            Provider: ISRO Resourcesat-2 / Sentinel-2 L2A • 30m Grid
           </div>
         </div>
 

@@ -74,7 +74,7 @@ export default function Survekshan() {
   return (
     <div className="flex flex-col gap-6 p-6">
       <div>
-        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">{t("survey.title")}</h1>
+        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">Jal Jeevan Survekshan Assessment</h1>
         <p className="text-[13px] text-[#44474e] mt-1">Performance Evaluation across 754 Districts</p>
       </div>
 
@@ -112,7 +112,7 @@ export default function Survekshan() {
           </div>
         </div>
         <div style={{ width: "100%", height: 350 }}>
-          <ResponsiveContainer>
+          <ResponsiveContainer className="notranslate" translate="no">
             <BarChart data={barData} layout="vertical" margin={{ top: 5, right: 20, bottom: 5, left: 120 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#E8EEFA" horizontal={false} />
               <XAxis type="number" domain={[0, 100]} tick={{ fontSize: 10, fill: "#44474e" }}

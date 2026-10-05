@@ -41,7 +41,7 @@ export default function WaterQuality({ isFloodActive }) {
   return (
     <div className="flex flex-col gap-6 p-6">
       <div>
-        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">{t("wq.title")}</h1>
+        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">Water Quality & Potability Telemetry (WQMIS)</h1>
         <p className="text-[13px] text-[#44474e] mt-1">जल गुणवत्ता प्रबंधन सूचना प्रणाली</p>
       </div>
 
@@ -64,8 +64,8 @@ export default function WaterQuality({ isFloodActive }) {
             Sample Distribution (Lab + FTK)
           </h2>
           <div style={{ width: "100%", height: 280 }}>
-            <ResponsiveContainer>
-              <PieChart>
+            <ResponsiveContainer className="notranslate" translate="no">
+              <PieChart className="notranslate" translate="no">
                 <Pie data={donutData} cx="50%" cy="50%" innerRadius={60} outerRadius={90}
                   dataKey="value" paddingAngle={3} label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
                   labelLine={{ stroke: "#74777f", strokeWidth: 1 }}>

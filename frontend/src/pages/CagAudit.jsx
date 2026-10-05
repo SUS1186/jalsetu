@@ -61,7 +61,7 @@ export default function CagAudit({ telemetry, isBurstActive }) {
     <div className="flex flex-col gap-6 p-6">
       {/* ── Title ── */}
       <div>
-        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">{t("cag.title")}</h1>
+        <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">CAG Ground-Truth & Financial Compliance Audit</h1>
         <div className="flex items-center gap-3 mt-1">
           <span className="bg-[#E8EEFA] text-[#0B5CAB] px-2 py-0.5 rounded text-[10px] font-bold">REF: CAG/PA/DW&amp;S-09/2024</span>
           {isBurstActive && (
@@ -109,7 +109,7 @@ export default function CagAudit({ telemetry, isBurstActive }) {
           LPCD Delivery: {t("common.actual")} vs Mandate (Dynamic)
         </h2>
         <div style={{ width: "100%", height: 220 }}>
-          <ResponsiveContainer>
+          <ResponsiveContainer className="notranslate" translate="no">
             <BarChart data={lpcdBarData} margin={{ top: 10, right: 20, bottom: 5, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#E8EEFA" />
               <XAxis dataKey="name" tick={{ fontSize: 11, fill: "#44474e" }} />

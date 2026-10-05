@@ -69,7 +69,7 @@ function HydraulicSchematic({ isBurst, isFlood, selectedNode, onSelectNode, pres
           </span>
         </div>
         <span className="text-[10px] font-mono text-[#cbd5e1] bg-[#001733] px-2 py-0.5 rounded border border-[#0B5CAB]/30">
-          EPANET 2.2 Digital Twin &bull; 4 Nodes Active
+          EPANET 2.2 Digital Twin • 4 Nodes Active
         </span>
       </div>
 
@@ -212,7 +212,7 @@ export default function ScadaTwin({ telemetry, isBurstActive, isFloodActive, tel
         <div>
           <h1 className="text-[22px] font-bold text-[#002147] tracking-tight flex items-center gap-2">
             <span className="material-symbols-outlined text-[26px] text-[#0B5CAB]">precision_manufacturing</span>
-            {t("scada.title")}
+            {t(t("SCADA Cyber-Physical Hydraulic Digital Twin"))}
           </h1>
           <p className="text-[12px] text-[#44474e] mt-0.5">
             Real-Time Cyber-Physical Hydraulic Telemetry, EPANET 2.2 Twin &amp; Anomaly Detection
@@ -256,12 +256,12 @@ export default function ScadaTwin({ telemetry, isBurstActive, isFloodActive, tel
           <div>
             <div className="text-[16px] font-extrabold tracking-tight">
               {isPotable
-                ? "GRADE A &mdash; POTABLE (BIS:10500 Compliant)"
-                : "GRADE D &mdash; CONTAMINATED (Bacterial Contamination Risk)"}
+                ? "GRADE A — POTABLE (BIS:10500 Compliant)"
+                : "GRADE D — CONTAMINATED (Bacterial Contamination Risk)"}
             </div>
             <div className="text-[11px] mt-0.5 font-medium opacity-90">
               {isPotable
-                ? "Disinfection residual maintained. pH: 7.2 | Turbidity: 1.4 NTU | Free Chlorine: 0.35 mg/L &bull; Safe for direct household consumption."
+                ? "Disinfection residual maintained. pH: 7.2 | Turbidity: 1.4 NTU | Free Chlorine: 0.35 mg/L • Safe for direct household consumption."
                 : "Residual chlorine depleted (< 0.1 mg/L) or turbidity breached safety threshold (> 5 NTU). Do NOT consume without boiling."}
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function ScadaTwin({ telemetry, isBurstActive, isFloodActive, tel
             warningLow={0.7}
           />
           <div className="mt-2 text-[10px] text-[#74777f] font-mono">
-            Baseline: 3.80 bar &bull; Min: 0.70 bar
+            Baseline: 3.80 bar • Min: 0.70 bar
           </div>
         </div>
 
@@ -365,7 +365,7 @@ export default function ScadaTwin({ telemetry, isBurstActive, isFloodActive, tel
         </div>
 
         <div style={{ width: "100%", height: 260 }}>
-          <ResponsiveContainer>
+          <ResponsiveContainer className="notranslate" translate="no">
             <LineChart data={history} margin={{ top: 10, right: 20, bottom: 5, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#E8EEFA" />
               <XAxis dataKey="time" tick={{ fontSize: 9, fill: "#74777f" }} interval="preserveStartEnd" />

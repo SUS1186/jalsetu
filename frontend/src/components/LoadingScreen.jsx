@@ -1,3 +1,4 @@
+import { useLanguage } from '../context/LanguageContext';
 import React, { useState, useEffect } from "react";
 
 const INIT_STEPS = [

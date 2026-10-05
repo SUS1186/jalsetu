@@ -103,9 +103,9 @@ export default function ContractorSLA({ isBurstActive, isFloodActive, burstStart
       {/* ── Title ── */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
         <div>
-          <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">{t("sla.title")}</h1>
+          <h1 className="text-[22px] font-bold text-[#002147] tracking-tight">Contractor SLA & 5-Year O&M Performance Tracker</h1>
           <p className="text-[13px] text-[#44474e] mt-1">
-            L&amp;T Rural Water &amp; Infrastructure Division &bull; Contract: RWS/CSN/2024 &bull; 5-Year Comprehensive O&amp;M
+            L&amp;T Rural Water &amp; Infrastructure Division • Contract: RWS/CSN/2024 • 5-Year Comprehensive O&amp;M
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -121,7 +121,7 @@ export default function ContractorSLA({ isBurstActive, isFloodActive, burstStart
           {remediationDispatched && (
             <span className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-green-100 text-green-800 text-[12px] font-bold border border-green-300">
               <span className="material-symbols-outlined text-[16px]">check_circle</span>
-              Rapid Repair Unit Dispatched &bull; Escrow Drawdown Authorized
+              Rapid Repair Unit Dispatched • Escrow Drawdown Authorized
             </span>
           )}
         </div>
@@ -316,7 +316,7 @@ export default function ContractorSLA({ isBurstActive, isFloodActive, burstStart
           </div>
         </div>
         <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" className="notranslate" translate="no">
             <BarChart data={MONTHLY_WITHHOLDINGS} margin={{ top: 10, right: 20, left: 0, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#44474e" }} />
